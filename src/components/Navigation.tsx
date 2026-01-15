@@ -69,7 +69,10 @@ export function Navigation() {
             >
               <div className="relative h-10 w-44">
                 <Image
-                  src="https://www.websensei.fr/wp-content/uploads/2025/05/websensei-white-logo.svg"
+                  src={theme === 'dark'
+                    ? "https://www.websensei.fr/wp-content/uploads/2025/05/websensei-white-logo.svg"
+                    : "https://www.websensei.fr/wp-content/uploads/2025/04/websensei-logo.svg"
+                  }
                   alt="WebSensei"
                   fill
                   className="object-contain object-left"

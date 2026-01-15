@@ -3,6 +3,7 @@ import '../globals.css'
 import { Navigation } from '@/components/Navigation'
 import { ParticleBackground } from '@/components/ParticleBackground'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { GSAPProvider } from '@/components/GSAPProvider'
 import { DictionaryProvider } from '@/i18n/DictionaryProvider'
 import { getDictionary } from '@/i18n/getDictionary'
 import { locales, isRTL, type Locale } from '@/i18n/config'
@@ -68,11 +69,13 @@ export default async function LocaleLayout({
       <body className={`min-h-screen antialiased ${rtl ? 'font-heebo' : ''}`}>
         <ThemeProvider>
           <DictionaryProvider dictionary={dictionary} locale={locale}>
-            <ParticleBackground />
-            <Navigation />
-            <main className="relative z-10">
-              {children}
-            </main>
+            <GSAPProvider>
+              <ParticleBackground />
+              <Navigation />
+              <main className="relative z-10">
+                {children}
+              </main>
+            </GSAPProvider>
           </DictionaryProvider>
         </ThemeProvider>
       </body>
