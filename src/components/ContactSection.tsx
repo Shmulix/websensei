@@ -74,7 +74,6 @@ export function ContactSection() {
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="h-px w-12 bg-ninja-gold" />
-            <span className="jp-char text-2xl text-ninja-gold/50">連</span>
             <span className="h-px w-12 bg-ninja-gold" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -100,7 +99,7 @@ export function ContactSection() {
                 {/* Name Input */}
                 <div>
                   <label htmlFor="name" className="block text-sm text-gray-400 mb-2">
-                    Nom <span className="jp-char text-ninja-purple/50">名</span>
+                    Nom
                   </label>
                   <input
                     type="text"
@@ -116,7 +115,7 @@ export function ContactSection() {
                 {/* Email Input */}
                 <div>
                   <label htmlFor="email" className="block text-sm text-gray-400 mb-2">
-                    Email <span className="jp-char text-ninja-purple/50">電</span>
+                    Email
                   </label>
                   <input
                     type="email"
@@ -132,7 +131,7 @@ export function ContactSection() {
                 {/* Project Type */}
                 <div>
                   <label htmlFor="project" className="block text-sm text-gray-400 mb-2">
-                    Type de projet <span className="jp-char text-ninja-purple/50">務</span>
+                    Type de projet
                   </label>
                   <select
                     id="project"
@@ -153,7 +152,7 @@ export function ContactSection() {
                 {/* Message Input */}
                 <div>
                   <label htmlFor="message" className="block text-sm text-gray-400 mb-2">
-                    Message <span className="jp-char text-ninja-purple/50">文</span>
+                    Message
                   </label>
                   <textarea
                     id="message"
@@ -206,7 +205,6 @@ export function ContactSection() {
                     <>
                       <Send className="w-5 h-5" />
                       Envoyer
-                      <span className="jp-char">送</span>
                     </>
                   )}
                 </motion.button>
@@ -296,9 +294,6 @@ export function ContactSection() {
                 "Rapide, moderne, orienté résultats."
               </p>
               <p className="text-ninja-cyan text-sm mt-2">— Web Sensei</p>
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 jp-char text-6xl text-ninja-purple/10">
-                智
-              </span>
             </motion.div>
           </motion.div>
         </div>

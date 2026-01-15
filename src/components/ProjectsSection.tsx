@@ -10,7 +10,6 @@ const services = [
     description: 'Création de sites WordPress modernes avec Elementor, Kadence ou Crocoblock. Design sur mesure et optimisé.',
     icon: Globe,
     tags: ['Elementor Pro', 'Kadence', 'Crocoblock', 'WooCommerce'],
-    kanji: '網',
     color: 'from-blue-400 to-blue-600',
   },
   {
@@ -18,7 +17,6 @@ const services = [
     description: 'Solutions 100% custom quand WordPress n\'est pas adapté. HTML/CSS/JS moderne, React, Next.js.',
     icon: Code2,
     tags: ['HTML/CSS', 'JavaScript', 'React', 'Next.js'],
-    kanji: '術',
     color: 'from-purple-400 to-purple-600',
   },
   {
@@ -26,7 +24,6 @@ const services = [
     description: 'Animations front avancées avec GSAP et ScrollTrigger. Micro-interactions et effets visuels premium.',
     icon: Sparkles,
     tags: ['GSAP', 'ScrollTrigger', 'Lottie', 'CSS Animations'],
-    kanji: '動',
     color: 'from-green-400 to-green-600',
   },
   {
@@ -34,7 +31,6 @@ const services = [
     description: 'Optimisation cache, images AVIF/WebP, code propre. Core Web Vitals au vert.',
     icon: Zap,
     tags: ['Cache', 'CDN', 'Images AVIF', 'Core Web Vitals'],
-    kanji: '速',
     color: 'from-yellow-400 to-orange-500',
   },
   {
@@ -42,7 +38,6 @@ const services = [
     description: 'SEO structurel et technique. Schema markup, sitemap, performance, accessibilité.',
     icon: Search,
     tags: ['SEO On-Page', 'Schema.org', 'Sitemap', 'Meta Tags'],
-    kanji: '索',
     color: 'from-cyan-400 to-cyan-600',
   },
   {
@@ -50,7 +45,6 @@ const services = [
     description: 'Mise en place de tracking avancé. Google Analytics 4, Tag Manager, événements custom.',
     icon: BarChart3,
     tags: ['GA4', 'GTM', 'Events', 'Conversions'],
-    kanji: '計',
     color: 'from-pink-400 to-pink-600',
   },
   {
@@ -58,7 +52,6 @@ const services = [
     description: 'Maintenance mensuelle : mises à jour, sécurité, backups, monitoring, support technique.',
     icon: Wrench,
     tags: ['Updates', 'Sécurité', 'Backups', 'Support'],
-    kanji: '守',
     color: 'from-gray-400 to-gray-600',
   },
   {
@@ -66,7 +59,6 @@ const services = [
     description: 'Design d\'interface moderne et ergonomique. Dark/Light mode, responsive, accessibilité.',
     icon: Palette,
     tags: ['Figma', 'UI Design', 'Responsive', 'Dark Mode'],
-    kanji: '美',
     color: 'from-indigo-400 to-indigo-600',
   },
 ]
@@ -88,7 +80,6 @@ export function ProjectsSection() {
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="h-px w-12 bg-ninja-green" />
-            <span className="jp-char text-2xl text-ninja-green/50">務</span>
             <span className="h-px w-12 bg-ninja-green" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -114,16 +105,13 @@ export function ProjectsSection() {
               className="group relative"
             >
               <div className="card-ninja h-full flex flex-col p-6">
-                {/* Icon & Kanji */}
-                <div className="relative mb-4">
+                {/* Icon */}
+                <div className="mb-4">
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} p-0.5`}>
                     <div className="w-full h-full bg-ninja-dark rounded-[10px] flex items-center justify-center">
                       <service.icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
-                  <span className="absolute -top-2 -right-2 jp-char text-3xl text-ninja-purple/10 group-hover:text-ninja-purple/20 transition-colors">
-                    {service.kanji}
-                  </span>
                 </div>
 
                 {/* Title */}
@@ -171,7 +159,6 @@ export function ProjectsSection() {
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-ninja-purple to-ninja-cyan rounded-lg font-medium text-white shadow-lg shadow-ninja-purple/25 hover:shadow-ninja-cyan/25 transition-shadow"
           >
             <span>Discutons de votre projet</span>
-            <span className="jp-char text-lg">話</span>
           </motion.a>
           <p className="text-gray-500 text-sm mt-4">
             Devis gratuit sous 24h

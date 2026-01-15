@@ -14,7 +14,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
-          <div className="relative h-6 w-28">
+          <div className="relative h-8 w-36">
             <Image
               src="https://www.websensei.fr/wp-content/uploads/2025/05/websensei-white-logo.svg"
               alt="WebSensei"

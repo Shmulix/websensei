@@ -2,16 +2,16 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Code2, Sun, Moon } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
 import Image from 'next/image'
 
 const navItems = [
-  { name: 'Accueil', href: '#home', kanji: '家' },
-  { name: 'À propos', href: '#about', kanji: '者' },
-  { name: 'Stack', href: '#skills', kanji: '術' },
-  { name: 'Services', href: '#services', kanji: '務' },
-  { name: 'Contact', href: '#contact', kanji: '連' },
+  { name: 'Accueil', href: '#home' },
+  { name: 'À propos', href: '#about' },
+  { name: 'Expertise', href: '#skills' },
+  { name: 'Services', href: '#services' },
+  { name: 'Contact', href: '#contact' },
 ]
 
 export function Navigation() {
@@ -24,7 +24,6 @@ export function Navigation() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
 
-      // Update active section based on scroll position
       const sections = navItems.map(item => item.href.slice(1))
       for (const section of sections.reverse()) {
         const element = document.getElementById(section)
@@ -51,8 +50,8 @@ export function Navigation() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? theme === 'dark'
-              ? 'bg-ninja-black/90 backdrop-blur-md border-b border-ninja-purple/20'
-              : 'bg-white/90 backdrop-blur-md border-b border-ninja-purple/20 shadow-sm'
+              ? 'bg-[#0a0a0a]/95 backdrop-blur-md border-b border-ninja-purple/20'
+              : 'bg-white/95 backdrop-blur-md border-b border-gray-200'
             : ''
         }`}
       >
@@ -62,10 +61,10 @@ export function Navigation() {
             <motion.a
               href="#home"
               className="flex items-center group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <div className="relative h-8 w-36">
+              <div className="relative h-10 w-44">
                 <Image
                   src="https://www.websensei.fr/wp-content/uploads/2025/05/websensei-white-logo.svg"
                   alt="WebSensei"
@@ -85,7 +84,7 @@ export function Navigation() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className={`relative px-4 py-2 text-sm transition-colors group ${
+                  className={`relative px-4 py-2 text-sm transition-colors ${
                     activeSection === item.href.slice(1)
                       ? 'text-ninja-cyan'
                       : theme === 'dark'
@@ -93,12 +92,7 @@ export function Navigation() {
                         : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
-                  <span className="relative z-10 flex items-center gap-1">
-                    {item.name}
-                    <span className="jp-char text-xs opacity-0 group-hover:opacity-50 transition-opacity">
-                      {item.kanji}
-                    </span>
-                  </span>
+                  <span className="relative z-10">{item.name}</span>
                   {activeSection === item.href.slice(1) && (
                     <motion.div
                       layoutId="activeNav"
@@ -184,8 +178,8 @@ export function Navigation() {
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className={`fixed inset-y-0 right-0 z-40 w-64 backdrop-blur-lg border-l md:hidden ${
               theme === 'dark'
-                ? 'bg-ninja-dark/95 border-ninja-purple/20'
-                : 'bg-white/95 border-ninja-purple/20'
+                ? 'bg-[#121212]/95 border-ninja-purple/20'
+                : 'bg-white/95 border-gray-200'
             }`}
           >
             <div className="flex flex-col gap-2 p-6 mt-16">
@@ -197,7 +191,7 @@ export function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-lg transition-colors ${
+                  className={`px-4 py-3 rounded-lg transition-colors ${
                     activeSection === item.href.slice(1)
                       ? 'bg-ninja-purple/20 text-ninja-cyan'
                       : theme === 'dark'
@@ -205,15 +199,9 @@ export function Navigation() {
                         : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                   }`}
                 >
-                  <span>{item.name}</span>
-                  <span className="jp-char text-ninja-purple/50">{item.kanji}</span>
+                  {item.name}
                 </motion.a>
               ))}
-            </div>
-
-            {/* Decorative Element */}
-            <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-              <Code2 className="w-12 h-12 text-ninja-purple/20" />
             </div>
           </motion.div>
         )}

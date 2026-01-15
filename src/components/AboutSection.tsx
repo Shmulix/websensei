@@ -13,17 +13,17 @@ const stats = [
 
 const philosophies = [
   {
-    kanji: '速',
+    icon: Zap,
     meaning: 'Rapidité',
     description: 'Je code vite parce que je code intelligemment. L\'IA accélère mon time-to-market.',
   },
   {
-    kanji: '質',
+    icon: Target,
     meaning: 'Qualité',
     description: 'Clean code, clean UI, clean process. Performance et maintenabilité avant tout.',
   },
   {
-    kanji: '効',
+    icon: Cpu,
     meaning: 'Efficacité',
     description: 'Pragmatique : choisir l\'outil le plus efficace, pas le plus à la mode.',
   },
@@ -46,7 +46,6 @@ export function AboutSection() {
         >
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="h-px w-12 bg-ninja-purple" />
-            <span className="jp-char text-2xl text-ninja-purple/50">者</span>
             <span className="h-px w-12 bg-ninja-purple" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -142,12 +141,12 @@ export function AboutSection() {
             className="space-y-6"
           >
             <h3 className="text-lg text-gray-400 mb-6">
-              ADN & philosophie de travail <span className="jp-char text-ninja-purple">道</span>
+              Ma philosophie de travail
             </h3>
 
             {philosophies.map((item, index) => (
               <motion.div
-                key={item.kanji}
+                key={item.meaning}
                 initial={{ opacity: 0, x: 30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.5 + index * 0.15 }}
@@ -155,26 +154,14 @@ export function AboutSection() {
                 className="group relative overflow-hidden"
               >
                 <div className="card-ninja p-6 flex items-center gap-6">
-                  <div className="relative">
-                    <span className="jp-char text-5xl text-ninja-purple/20 group-hover:text-ninja-purple/40 transition-colors">
-                      {item.kanji}
-                    </span>
-                    <motion.div
-                      className="absolute inset-0 flex items-center justify-center"
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 4, repeat: Infinity }}
-                    >
-                      <span className="jp-char text-5xl text-transparent bg-clip-text bg-gradient-to-br from-ninja-cyan to-ninja-purple opacity-0 group-hover:opacity-100 transition-opacity">
-                        {item.kanji}
-                      </span>
-                    </motion.div>
+                  <div className="p-3 bg-ninja-purple/10 rounded-lg group-hover:bg-ninja-purple/20 transition-colors">
+                    <item.icon className="w-8 h-8 text-ninja-purple group-hover:text-ninja-cyan transition-colors" />
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white mb-1">{item.meaning}</h4>
                     <p className="text-gray-400 text-sm">{item.description}</p>
                   </div>
                 </div>
-                <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-ninja-cyan to-transparent opacity-0 group-hover:opacity-100 transform -translate-y-1/2 transition-opacity" />
               </motion.div>
             ))}
 
@@ -189,7 +176,6 @@ export function AboutSection() {
                 "Je code vite parce que je code intelligemment."
               </p>
               <p className="text-ninja-cyan text-sm mt-2">— Ma philosophie de développement</p>
-              <span className="absolute right-4 top-4 jp-char text-4xl text-ninja-purple/10">智</span>
             </motion.div>
           </motion.div>
         </div>
