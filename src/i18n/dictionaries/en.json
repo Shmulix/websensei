@@ -1,0 +1,193 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Expertise",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "location": "Ramat Gan, Israel",
+    "brandName": "Web Sensei",
+    "name": "Samuel Felix Perez",
+    "role": "WordPress Expert • Full-Code Developer • AI-Driven",
+    "description": "I create modern and high-performance websites, from advanced WordPress to custom full-code solutions. AI is my co-developer: I code fast because I code",
+    "descriptionHighlight": "smart",
+    "tags": ["WordPress", "Full-Code", "GSAP", "AI", "Performance", "SEO"],
+    "cta": {
+      "services": "View my services",
+      "contact": "Contact me"
+    },
+    "terminal": {
+      "path": "~/websensei",
+      "command": "cat profile.js",
+      "code": {
+        "name": "Samuel Felix Perez",
+        "role": "Web Developer & AI-Driven Builder",
+        "location": "Ramat Gan, Israel",
+        "stack": ["WordPress", "Full-Code", "GSAP", "AI"],
+        "motto": "I code fast because I code smart"
+      }
+    },
+    "scroll": "Scroll"
+  },
+  "about": {
+    "title": "Who is",
+    "titleHighlight": "Web Sensei",
+    "subtitle": "An ultra-modern hybrid profile: web development + business + AI",
+    "freelance": {
+      "title": "Web Freelance",
+      "description": "Website creation & digital solutions. From advanced WordPress (Elementor, Kadence, Crocoblock) to custom full-code development, accelerated by AI as a co-developer."
+    },
+    "business": {
+      "title": "Business & Affiliation",
+      "description": "Affiliate Manager + Operation Manager at Ofran (car rental). A dual role that gives me a complete vision: technical AND business."
+    },
+    "ai": {
+      "title": "AI-Driven Development",
+      "description": "AI is not a gimmick, it's a productivity lever driven by real technical and business understanding. Clean code generation, refactoring, optimization, debugging: everything is accelerated."
+    },
+    "stats": {
+      "hybrid": "Hybrid profile",
+      "coDev": "Co-developer",
+      "passion": "Tech passion"
+    },
+    "philosophy": {
+      "title": "My work philosophy",
+      "speed": {
+        "title": "Speed",
+        "description": "I code fast because I code smart. AI accelerates my time-to-market."
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "Clean code, clean UI, clean process. Performance and maintainability first."
+      },
+      "efficiency": {
+        "title": "Efficiency",
+        "description": "Pragmatic: choose the most effective tool, not the trendiest one."
+      }
+    },
+    "quote": "I code fast because I code smart.",
+    "quoteAuthor": "— My development philosophy"
+  },
+  "skills": {
+    "title": "My",
+    "titleHighlight": "Expertise",
+    "subtitle": "Web solutions tailored to your needs, from creation to maintenance",
+    "areas": {
+      "websites": {
+        "title": "Website Creation",
+        "description": "Showcase sites, e-commerce, blogs. Modern design adapted to all screens."
+      },
+      "design": {
+        "title": "Custom Design",
+        "description": "Elegant and intuitive interfaces. Your brand image enhanced."
+      },
+      "performance": {
+        "title": "Performance & Speed",
+        "description": "Fast sites that load in under 3 seconds. Better SEO ranking."
+      },
+      "seo": {
+        "title": "SEO Optimization",
+        "description": "Google optimization. More visibility, more clients."
+      },
+      "development": {
+        "title": "Advanced Development",
+        "description": "Custom technical solutions when standard tools aren't enough."
+      },
+      "analytics": {
+        "title": "Tracking & Analytics",
+        "description": "Dashboards to track your visitors and measure your results."
+      },
+      "maintenance": {
+        "title": "Maintenance & Support",
+        "description": "Updates, backups, technical support. Your site always at its best."
+      },
+      "security": {
+        "title": "Web Security",
+        "description": "Protection against attacks. SSL certificates, automatic backups."
+      }
+    },
+    "technologies": "Technologies used"
+  },
+  "services": {
+    "title": "My",
+    "titleHighlight": "Services",
+    "subtitle": "From advanced WordPress to custom full-code, fast, modern and results-oriented solutions",
+    "items": {
+      "wordpress": {
+        "title": "WordPress Sites",
+        "description": "Modern WordPress site creation with Elementor, Kadence or Crocoblock. Custom and optimized design."
+      },
+      "fullcode": {
+        "title": "Full-Code Development",
+        "description": "100% custom solutions when WordPress isn't suitable. Modern HTML/CSS/JS, React, Next.js."
+      },
+      "gsap": {
+        "title": "GSAP Animations",
+        "description": "Advanced front-end animations with GSAP and ScrollTrigger. Micro-interactions and premium visual effects."
+      },
+      "performance": {
+        "title": "Web Performance",
+        "description": "Cache optimization, AVIF/WebP images, clean code. Green Core Web Vitals."
+      },
+      "seo": {
+        "title": "Technical SEO",
+        "description": "Structural and technical SEO. Schema markup, sitemap, performance, accessibility."
+      },
+      "analytics": {
+        "title": "Tracking & Analytics",
+        "description": "Advanced tracking setup. Google Analytics 4, Tag Manager, custom events."
+      },
+      "maintenance": {
+        "title": "Technical Maintenance",
+        "description": "Monthly maintenance: updates, security, backups, monitoring, technical support."
+      },
+      "uiux": {
+        "title": "UI/UX Design",
+        "description": "Modern and ergonomic interface design. Dark/Light mode, responsive, accessibility."
+      }
+    },
+    "cta": "Let's discuss your project",
+    "ctaSubtext": "Free quote within 24h"
+  },
+  "contact": {
+    "title": "Let's discuss",
+    "titleHighlight": "Your Project",
+    "subtitle": "Free quote within 24h. WordPress, full-code, performance: let's find the best solution together.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "project": "Project type",
+      "projectPlaceholder": "Select...",
+      "projectOptions": {
+        "wordpress": "WordPress Site",
+        "fullcode": "Full-Code Development",
+        "performance": "Performance Optimization",
+        "maintenance": "Maintenance",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Describe your project...",
+      "submit": "Send",
+      "sending": "Sending...",
+      "sent": "Message sent!",
+      "error": "Error, try again"
+    },
+    "info": {
+      "email": "Email",
+      "location": "Location",
+      "response": "Response",
+      "responseTime": "Within 24h"
+    },
+    "social": "Find me also on",
+    "quote": "Fast, modern, results-oriented.",
+    "quoteAuthor": "— Web Sensei"
+  },
+  "footer": {
+    "madeWith": "Crafted with",
+    "copyright": "All rights reserved."
+  }
+}

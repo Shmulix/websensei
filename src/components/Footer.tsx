@@ -3,8 +3,12 @@
 import { motion } from 'framer-motion'
 import { Heart, ArrowUp } from 'lucide-react'
 import Image from 'next/image'
+import { useDictionary } from '@/i18n/DictionaryProvider'
 
 export function Footer() {
+  const { dictionary } = useDictionary()
+  const t = dictionary.footer
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -13,7 +17,6 @@ export function Footer() {
     <footer className="relative py-12 px-4 bg-ninja-black border-t border-ninja-purple/10">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo */}
           <div className="relative h-8 w-36">
             <Image
               src="https://www.websensei.fr/wp-content/uploads/2025/05/websensei-white-logo.svg"
@@ -23,9 +26,8 @@ export function Footer() {
             />
           </div>
 
-          {/* Made with love */}
           <div className="flex items-center gap-2 text-gray-500 text-sm">
-            <span>Crafté avec</span>
+            <span>{t.madeWith}</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
@@ -38,7 +40,6 @@ export function Footer() {
             <span className="text-ninja-purple">Next.js</span>
           </div>
 
-          {/* Back to top */}
           <motion.button
             onClick={scrollToTop}
             whileHover={{ scale: 1.1 }}
@@ -49,10 +50,9 @@ export function Footer() {
           </motion.button>
         </div>
 
-        {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-ninja-purple/10 text-center">
           <p className="text-gray-600 text-sm">
-            © {new Date().getFullYear()} Web Sensei - Samuel Felix Perez. Tous droits réservés.
+            © {new Date().getFullYear()} Web Sensei - Samuel Felix Perez. {t.copyright}
           </p>
           <p className="text-gray-700 text-xs mt-2">
             Ramat Gan, Israel

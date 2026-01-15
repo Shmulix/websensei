@@ -3,18 +3,22 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown, Github, Linkedin, Mail, MapPin } from 'lucide-react'
-
-const codeLines = [
-  { text: 'const webSensei = {', delay: 0 },
-  { text: '  name: "Samuel Felix Perez",', delay: 0.5 },
-  { text: '  role: "Web Developer & AI-Driven Builder",', delay: 1 },
-  { text: '  location: "Ramat Gan, Israel",', delay: 1.5 },
-  { text: '  stack: ["WordPress", "Full-Code", "GSAP", "AI"],', delay: 2 },
-  { text: '  motto: "Je code vite parce que je code intelligemment"', delay: 2.5 },
-  { text: '};', delay: 3 },
-]
+import { useDictionary } from '@/i18n/DictionaryProvider'
 
 export function HeroSection() {
+  const { dictionary, locale } = useDictionary()
+  const t = dictionary.hero
+
+  const codeLines = [
+    { text: 'const webSensei = {', delay: 0 },
+    { text: `  name: "${t.terminal.code.name}",`, delay: 0.5 },
+    { text: `  role: "${t.terminal.code.role}",`, delay: 1 },
+    { text: `  location: "${t.terminal.code.location}",`, delay: 1.5 },
+    { text: `  stack: ${JSON.stringify(t.terminal.code.stack)},`, delay: 2 },
+    { text: `  motto: "${t.terminal.code.motto}"`, delay: 2.5 },
+    { text: '};', delay: 3 },
+  ]
+
   const [displayedLines, setDisplayedLines] = useState<number>(0)
   const [isTyping, setIsTyping] = useState(true)
 
@@ -27,7 +31,7 @@ export function HeroSection() {
     } else {
       setIsTyping(false)
     }
-  }, [displayedLines])
+  }, [displayedLines, codeLines.length])
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-4 pt-16">
@@ -35,7 +39,7 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: locale === 'he' ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="space-y-6"
@@ -50,7 +54,7 @@ export function HeroSection() {
               <span className="h-px w-12 bg-ninja-cyan" />
               <span className="text-ninja-cyan text-sm flex items-center gap-2">
                 <MapPin className="w-3 h-3" />
-                Ramat Gan, Israel
+                {t.location}
               </span>
             </motion.div>
 
@@ -62,7 +66,7 @@ export function HeroSection() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-ninja-cyan to-ninja-purple">
-                Web Sensei
+                {t.brandName}
               </span>
             </motion.h1>
 
@@ -74,10 +78,10 @@ export function HeroSection() {
               className="space-y-2"
             >
               <h2 className="text-xl sm:text-2xl text-gray-400">
-                Samuel Felix Perez
+                {t.name}
               </h2>
               <p className="text-lg text-ninja-green">
-                WordPress Expert • Full-Code Developer • AI-Driven
+                {t.role}
               </p>
             </motion.div>
 
@@ -88,8 +92,7 @@ export function HeroSection() {
               transition={{ delay: 0.8 }}
               className="text-gray-400 text-lg max-w-lg leading-relaxed"
             >
-              Je crée des sites web modernes et performants, du WordPress avancé au full-code sur mesure.
-              L'IA est mon co-développeur : je code vite parce que je code <span className="text-ninja-cyan">intelligemment</span>.
+              {t.description} <span className="text-ninja-cyan">{t.descriptionHighlight}</span>.
             </motion.p>
 
             {/* Tags */}
@@ -99,7 +102,7 @@ export function HeroSection() {
               transition={{ delay: 0.9 }}
               className="flex flex-wrap gap-2"
             >
-              {['WordPress', 'Full-Code', 'GSAP', 'IA', 'Performance', 'SEO'].map((tag) => (
+              {t.tags.map((tag: string) => (
                 <span
                   key={tag}
                   className="px-3 py-1 text-xs bg-ninja-gray/50 border border-ninja-purple/20 rounded-full text-gray-400"
@@ -122,7 +125,7 @@ export function HeroSection() {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-gradient-to-r from-ninja-purple to-ninja-cyan rounded-lg font-medium text-white shadow-lg shadow-ninja-purple/25 hover:shadow-ninja-cyan/25 transition-shadow"
               >
-                Voir mes services
+                {t.cta.services}
               </motion.a>
               <motion.a
                 href="#contact"
@@ -130,7 +133,7 @@ export function HeroSection() {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 border border-ninja-purple/50 rounded-lg font-medium text-white hover:border-ninja-cyan/50 hover:bg-ninja-purple/10 transition-all"
               >
-                Me contacter
+                {t.cta.contact}
               </motion.a>
             </motion.div>
 
@@ -164,7 +167,7 @@ export function HeroSection() {
 
           {/* Right Side - Code Terminal */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: locale === 'he' ? -50 : 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative"
@@ -182,11 +185,11 @@ export function HeroSection() {
               </div>
 
               {/* Terminal Content */}
-              <div className="p-6 font-mono text-sm">
+              <div className="p-6 font-mono text-sm" dir="ltr">
                 <div className="flex items-center gap-2 text-gray-500 mb-4">
                   <span className="text-ninja-green">➜</span>
-                  <span className="text-ninja-cyan">~/websensei</span>
-                  <span>cat profile.js</span>
+                  <span className="text-ninja-cyan">{t.terminal.path}</span>
+                  <span>{t.terminal.command}</span>
                 </div>
 
                 <div className="space-y-1">
@@ -222,7 +225,7 @@ export function HeroSection() {
                     className="mt-4 flex items-center gap-2 text-gray-500"
                   >
                     <span className="text-ninja-green">➜</span>
-                    <span className="text-ninja-cyan">~/websensei</span>
+                    <span className="text-ninja-cyan">{t.terminal.path}</span>
                     <span className="cursor" />
                   </motion.div>
                 )}
@@ -256,7 +259,7 @@ export function HeroSection() {
             transition={{ duration: 2, repeat: Infinity }}
             className="flex flex-col items-center gap-2 text-gray-500 hover:text-ninja-cyan transition-colors"
           >
-            <span className="text-xs">Scroll</span>
+            <span className="text-xs">{t.scroll}</span>
             <ChevronDown className="w-5 h-5" />
           </motion.a>
         </motion.div>

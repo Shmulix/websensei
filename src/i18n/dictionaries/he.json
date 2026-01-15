@@ -1,0 +1,193 @@
+{
+  "nav": {
+    "home": "בית",
+    "about": "אודות",
+    "skills": "מומחיות",
+    "services": "שירותים",
+    "contact": "צור קשר"
+  },
+  "hero": {
+    "location": "רמת גן, ישראל",
+    "brandName": "Web Sensei",
+    "name": "סמואל פליקס פרז",
+    "role": "מומחה WordPress • מפתח Full-Code • מונע AI",
+    "description": "אני יוצר אתרים מודרניים ובעלי ביצועים גבוהים, מ-WordPress מתקדם ועד פיתוח Full-Code מותאם אישית. AI הוא השותף שלי: אני מתכנת מהר כי אני מתכנת",
+    "descriptionHighlight": "בחוכמה",
+    "tags": ["WordPress", "Full-Code", "GSAP", "AI", "ביצועים", "SEO"],
+    "cta": {
+      "services": "צפה בשירותים שלי",
+      "contact": "צור קשר"
+    },
+    "terminal": {
+      "path": "~/websensei",
+      "command": "cat profile.js",
+      "code": {
+        "name": "Samuel Felix Perez",
+        "role": "Web Developer & AI-Driven Builder",
+        "location": "Ramat Gan, Israel",
+        "stack": ["WordPress", "Full-Code", "GSAP", "AI"],
+        "motto": "אני מתכנת מהר כי אני מתכנת בחוכמה"
+      }
+    },
+    "scroll": "גלול"
+  },
+  "about": {
+    "title": "מי זה",
+    "titleHighlight": "Web Sensei",
+    "subtitle": "פרופיל היברידי אולטרה-מודרני: פיתוח אתרים + עסקים + AI",
+    "freelance": {
+      "title": "פרילנס Web",
+      "description": "בניית אתרים ופתרונות דיגיטליים. מ-WordPress מתקדם (Elementor, Kadence, Crocoblock) ועד פיתוח Full-Code מותאם אישית, מואץ על ידי AI כשותף לפיתוח."
+    },
+    "business": {
+      "title": "עסקים ושותפויות",
+      "description": "מנהל שותפים + מנהל תפעול ב-Ofran (השכרת רכב). תפקיד כפול שנותן לי ראייה מלאה: טכנית וגם עסקית."
+    },
+    "ai": {
+      "title": "פיתוח מונע AI",
+      "description": "AI זה לא גימיק, זה מנוף פרודוקטיביות מונע על ידי הבנה טכנית ועסקית אמיתית. יצירת קוד נקי, ריפקטורינג, אופטימיזציה, דיבוג: הכל מואץ."
+    },
+    "stats": {
+      "hybrid": "פרופיל היברידי",
+      "coDev": "שותף לפיתוח",
+      "passion": "תשוקה לטכנולוגיה"
+    },
+    "philosophy": {
+      "title": "הפילוסופיה שלי",
+      "speed": {
+        "title": "מהירות",
+        "description": "אני מתכנת מהר כי אני מתכנת בחוכמה. AI מאיץ את ה-time-to-market שלי."
+      },
+      "quality": {
+        "title": "איכות",
+        "description": "קוד נקי, UI נקי, תהליך נקי. ביצועים ותחזוקתיות קודם כל."
+      },
+      "efficiency": {
+        "title": "יעילות",
+        "description": "פרגמטי: לבחור את הכלי היעיל ביותר, לא את הטרנדי ביותר."
+      }
+    },
+    "quote": "אני מתכנת מהר כי אני מתכנת בחוכמה.",
+    "quoteAuthor": "— הפילוסופיה שלי לפיתוח"
+  },
+  "skills": {
+    "title": "ה",
+    "titleHighlight": "מומחיות שלי",
+    "subtitle": "פתרונות אינטרנט מותאמים לצרכים שלך, מיצירה ועד תחזוקה",
+    "areas": {
+      "websites": {
+        "title": "בניית אתרים",
+        "description": "אתרי תדמית, חנויות אונליין, בלוגים. עיצוב מודרני ומותאם לכל המסכים."
+      },
+      "design": {
+        "title": "עיצוב מותאם אישית",
+        "description": "ממשקים אלגנטיים ואינטואיטיביים. תדמית המותג שלך מודגשת."
+      },
+      "performance": {
+        "title": "ביצועים ומהירות",
+        "description": "אתרים מהירים שנטענים בפחות מ-3 שניות. דירוג SEO טוב יותר."
+      },
+      "seo": {
+        "title": "קידום אתרים SEO",
+        "description": "אופטימיזציה לגוגל. יותר נראות, יותר לקוחות."
+      },
+      "development": {
+        "title": "פיתוח מתקדם",
+        "description": "פתרונות טכניים מותאמים אישית כשכלים סטנדרטיים לא מספיקים."
+      },
+      "analytics": {
+        "title": "מעקב ואנליטיקה",
+        "description": "דשבורדים למעקב אחר המבקרים ומדידת התוצאות שלך."
+      },
+      "maintenance": {
+        "title": "תחזוקה ותמיכה",
+        "description": "עדכונים, גיבויים, תמיכה טכנית. האתר שלך תמיד במיטבו."
+      },
+      "security": {
+        "title": "אבטחת אתרים",
+        "description": "הגנה מפני התקפות. תעודות SSL, גיבויים אוטומטיים."
+      }
+    },
+    "technologies": "טכנולוגיות בשימוש"
+  },
+  "services": {
+    "title": "ה",
+    "titleHighlight": "שירותים שלי",
+    "subtitle": "מ-WordPress מתקדם ועד Full-Code מותאם אישית, פתרונות מהירים, מודרניים ומוכווני תוצאות",
+    "items": {
+      "wordpress": {
+        "title": "אתרי WordPress",
+        "description": "יצירת אתרי WordPress מודרניים עם Elementor, Kadence או Crocoblock. עיצוב מותאם אישית ומותאם."
+      },
+      "fullcode": {
+        "title": "פיתוח Full-Code",
+        "description": "פתרונות 100% מותאמים אישית כש-WordPress לא מתאים. HTML/CSS/JS מודרני, React, Next.js."
+      },
+      "gsap": {
+        "title": "אנימציות GSAP",
+        "description": "אנימציות Front-End מתקדמות עם GSAP ו-ScrollTrigger. מיקרו-אינטראקציות ואפקטים חזותיים פרימיום."
+      },
+      "performance": {
+        "title": "ביצועי אתר",
+        "description": "אופטימיזציית Cache, תמונות AVIF/WebP, קוד נקי. Core Web Vitals ירוקים."
+      },
+      "seo": {
+        "title": "SEO טכני",
+        "description": "SEO מבני וטכני. Schema markup, sitemap, ביצועים, נגישות."
+      },
+      "analytics": {
+        "title": "מעקב ואנליטיקה",
+        "description": "הגדרת מעקב מתקדם. Google Analytics 4, Tag Manager, אירועים מותאמים אישית."
+      },
+      "maintenance": {
+        "title": "תחזוקה טכנית",
+        "description": "תחזוקה חודשית: עדכונים, אבטחה, גיבויים, ניטור, תמיכה טכנית."
+      },
+      "uiux": {
+        "title": "עיצוב UI/UX",
+        "description": "עיצוב ממשק מודרני וארגונומי. מצב כהה/בהיר, רספונסיבי, נגישות."
+      }
+    },
+    "cta": "בואו נדבר על הפרויקט שלך",
+    "ctaSubtext": "הצעת מחיר חינם תוך 24 שעות"
+  },
+  "contact": {
+    "title": "בואו נדבר על",
+    "titleHighlight": "הפרויקט שלך",
+    "subtitle": "הצעת מחיר חינם תוך 24 שעות. WordPress, Full-Code, ביצועים: נמצא ביחד את הפתרון הטוב ביותר.",
+    "form": {
+      "name": "שם",
+      "namePlaceholder": "השם שלך",
+      "email": "אימייל",
+      "emailPlaceholder": "your@email.com",
+      "project": "סוג הפרויקט",
+      "projectPlaceholder": "בחר...",
+      "projectOptions": {
+        "wordpress": "אתר WordPress",
+        "fullcode": "פיתוח Full-Code",
+        "performance": "אופטימיזציית ביצועים",
+        "maintenance": "תחזוקה",
+        "other": "אחר"
+      },
+      "message": "הודעה",
+      "messagePlaceholder": "תאר את הפרויקט שלך...",
+      "submit": "שלח",
+      "sending": "שולח...",
+      "sent": "ההודעה נשלחה!",
+      "error": "שגיאה, נסה שוב"
+    },
+    "info": {
+      "email": "אימייל",
+      "location": "מיקום",
+      "response": "תגובה",
+      "responseTime": "תוך 24 שעות"
+    },
+    "social": "מצא אותי גם ב",
+    "quote": "מהיר, מודרני, מוכוון תוצאות.",
+    "quoteAuthor": "— Web Sensei"
+  },
+  "footer": {
+    "madeWith": "נוצר עם",
+    "copyright": "כל הזכויות שמורות."
+  }
+}

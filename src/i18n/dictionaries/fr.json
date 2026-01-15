@@ -1,0 +1,193 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Expertise",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "location": "Ramat Gan, Israel",
+    "brandName": "Web Sensei",
+    "name": "Samuel Felix Perez",
+    "role": "Expert WordPress • Développeur Full-Code • IA-Driven",
+    "description": "Je crée des sites web modernes et performants, du WordPress avancé au full-code sur mesure. L'IA est mon co-développeur : je code vite parce que je code",
+    "descriptionHighlight": "intelligemment",
+    "tags": ["WordPress", "Full-Code", "GSAP", "IA", "Performance", "SEO"],
+    "cta": {
+      "services": "Voir mes services",
+      "contact": "Me contacter"
+    },
+    "terminal": {
+      "path": "~/websensei",
+      "command": "cat profile.js",
+      "code": {
+        "name": "Samuel Felix Perez",
+        "role": "Web Developer & AI-Driven Builder",
+        "location": "Ramat Gan, Israel",
+        "stack": ["WordPress", "Full-Code", "GSAP", "AI"],
+        "motto": "Je code vite parce que je code intelligemment"
+      }
+    },
+    "scroll": "Scroll"
+  },
+  "about": {
+    "title": "Qui est",
+    "titleHighlight": "Web Sensei",
+    "subtitle": "Un profil hybride ultra-moderne : développement web + business + IA",
+    "freelance": {
+      "title": "Freelance Web",
+      "description": "Création de sites web & solutions digitales. Du WordPress avancé (Elementor, Kadence, Crocoblock) au développement full-code sur mesure, accéléré par l'IA comme co-développeur."
+    },
+    "business": {
+      "title": "Business & Affiliation",
+      "description": "Affiliate Manager + Operation Manager chez Ofran (location de voiture). Une double casquette qui me donne une vision complète : technique ET business."
+    },
+    "ai": {
+      "title": "IA-Driven Development",
+      "description": "L'IA n'est pas un gadget, c'est un levier de productivité piloté par une vraie compréhension technique et métier. Génération de code propre, refactorisation, optimisation, debug : tout est accéléré."
+    },
+    "stats": {
+      "hybrid": "Profil hybride",
+      "coDev": "Co-développeur",
+      "passion": "Passion tech"
+    },
+    "philosophy": {
+      "title": "Ma philosophie de travail",
+      "speed": {
+        "title": "Rapidité",
+        "description": "Je code vite parce que je code intelligemment. L'IA accélère mon time-to-market."
+      },
+      "quality": {
+        "title": "Qualité",
+        "description": "Clean code, clean UI, clean process. Performance et maintenabilité avant tout."
+      },
+      "efficiency": {
+        "title": "Efficacité",
+        "description": "Pragmatique : choisir l'outil le plus efficace, pas le plus à la mode."
+      }
+    },
+    "quote": "Je code vite parce que je code intelligemment.",
+    "quoteAuthor": "— Ma philosophie de développement"
+  },
+  "skills": {
+    "title": "Mon",
+    "titleHighlight": "Expertise",
+    "subtitle": "Des solutions web adaptées à vos besoins, de la création à la maintenance",
+    "areas": {
+      "websites": {
+        "title": "Création de Sites Web",
+        "description": "Sites vitrine, e-commerce, blogs. Design moderne et adapté à tous les écrans."
+      },
+      "design": {
+        "title": "Design Sur Mesure",
+        "description": "Interfaces élégantes et intuitives. Votre image de marque mise en valeur."
+      },
+      "performance": {
+        "title": "Performance & Vitesse",
+        "description": "Sites rapides qui se chargent en moins de 3 secondes. Meilleur référencement."
+      },
+      "seo": {
+        "title": "Référencement SEO",
+        "description": "Optimisation pour Google. Plus de visibilité, plus de clients."
+      },
+      "development": {
+        "title": "Développement Avancé",
+        "description": "Solutions techniques personnalisées quand les outils standards ne suffisent pas."
+      },
+      "analytics": {
+        "title": "Suivi & Analytics",
+        "description": "Tableaux de bord pour suivre vos visiteurs et mesurer vos résultats."
+      },
+      "maintenance": {
+        "title": "Maintenance & Support",
+        "description": "Mises à jour, sauvegardes, support technique. Votre site toujours au top."
+      },
+      "security": {
+        "title": "Sécurité Web",
+        "description": "Protection contre les attaques. Certificats SSL, sauvegardes automatiques."
+      }
+    },
+    "technologies": "Technologies utilisées"
+  },
+  "services": {
+    "title": "Mes",
+    "titleHighlight": "Services",
+    "subtitle": "Du WordPress avancé au full-code sur mesure, des solutions rapides, modernes et orientées résultats",
+    "items": {
+      "wordpress": {
+        "title": "Sites WordPress",
+        "description": "Création de sites WordPress modernes avec Elementor, Kadence ou Crocoblock. Design sur mesure et optimisé."
+      },
+      "fullcode": {
+        "title": "Développement Full-Code",
+        "description": "Solutions 100% custom quand WordPress n'est pas adapté. HTML/CSS/JS moderne, React, Next.js."
+      },
+      "gsap": {
+        "title": "Animations GSAP",
+        "description": "Animations front avancées avec GSAP et ScrollTrigger. Micro-interactions et effets visuels premium."
+      },
+      "performance": {
+        "title": "Performance Web",
+        "description": "Optimisation cache, images AVIF/WebP, code propre. Core Web Vitals au vert."
+      },
+      "seo": {
+        "title": "SEO Technique",
+        "description": "SEO structurel et technique. Schema markup, sitemap, performance, accessibilité."
+      },
+      "analytics": {
+        "title": "Tracking & Analytics",
+        "description": "Mise en place de tracking avancé. Google Analytics 4, Tag Manager, événements custom."
+      },
+      "maintenance": {
+        "title": "Maintenance Technique",
+        "description": "Maintenance mensuelle : mises à jour, sécurité, backups, monitoring, support technique."
+      },
+      "uiux": {
+        "title": "UI/UX Design",
+        "description": "Design d'interface moderne et ergonomique. Dark/Light mode, responsive, accessibilité."
+      }
+    },
+    "cta": "Discutons de votre projet",
+    "ctaSubtext": "Devis gratuit sous 24h"
+  },
+  "contact": {
+    "title": "Discutons de",
+    "titleHighlight": "Votre Projet",
+    "subtitle": "Devis gratuit sous 24h. WordPress, full-code, performance : trouvons la meilleure solution ensemble.",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "project": "Type de projet",
+      "projectPlaceholder": "Sélectionnez...",
+      "projectOptions": {
+        "wordpress": "Site WordPress",
+        "fullcode": "Développement Full-Code",
+        "performance": "Optimisation Performance",
+        "maintenance": "Maintenance",
+        "other": "Autre"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Décrivez votre projet...",
+      "submit": "Envoyer",
+      "sending": "Envoi en cours...",
+      "sent": "Message envoyé !",
+      "error": "Erreur, réessayez"
+    },
+    "info": {
+      "email": "Email",
+      "location": "Location",
+      "response": "Réponse",
+      "responseTime": "Sous 24h"
+    },
+    "social": "Retrouvez-moi aussi sur",
+    "quote": "Rapide, moderne, orienté résultats.",
+    "quoteAuthor": "— Web Sensei"
+  },
+  "footer": {
+    "madeWith": "Crafté avec",
+    "copyright": "Tous droits réservés."
+  }
+}

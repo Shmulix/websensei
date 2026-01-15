@@ -4,21 +4,24 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
+import { useDictionary } from '@/i18n/DictionaryProvider'
+import { LanguageSwitcher } from './LanguageSwitcher'
 import Image from 'next/image'
-
-const navItems = [
-  { name: 'Accueil', href: '#home' },
-  { name: 'À propos', href: '#about' },
-  { name: 'Expertise', href: '#skills' },
-  { name: 'Services', href: '#services' },
-  { name: 'Contact', href: '#contact' },
-]
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const { theme, toggleTheme } = useTheme()
+  const { dictionary } = useDictionary()
+
+  const navItems = [
+    { name: dictionary.nav.home, href: '#home' },
+    { name: dictionary.nav.about, href: '#about' },
+    { name: dictionary.nav.skills, href: '#skills' },
+    { name: dictionary.nav.services, href: '#services' },
+    { name: dictionary.nav.contact, href: '#contact' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +42,7 @@ export function Navigation() {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [navItems])
 
   return (
     <>
@@ -103,12 +106,17 @@ export function Navigation() {
                 </motion.a>
               ))}
 
+              {/* Language Switcher */}
+              <div className="ml-2">
+                <LanguageSwitcher />
+              </div>
+
               {/* Theme Toggle Button */}
               <motion.button
                 onClick={toggleTheme}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className={`ml-4 p-2 rounded-lg transition-colors ${
+                className={`ml-2 p-2 rounded-lg transition-colors ${
                   theme === 'dark'
                     ? 'bg-ninja-gray/50 text-ninja-gold hover:bg-ninja-purple/20'
                     : 'bg-gray-100 text-ninja-purple hover:bg-ninja-purple/10'
@@ -141,8 +149,10 @@ export function Navigation() {
               </motion.button>
             </div>
 
-            {/* Mobile Menu Button + Theme Toggle */}
+            {/* Mobile Menu Button + Theme Toggle + Language */}
             <div className="flex items-center gap-2 md:hidden">
+              <LanguageSwitcher />
+
               <motion.button
                 onClick={toggleTheme}
                 whileTap={{ scale: 0.9 }}
