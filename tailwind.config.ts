@@ -22,7 +22,7 @@ const config: Config = {
       },
       fontFamily: {
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-        japanese: ['Noto Sans JP', 'sans-serif'],
+        heebo: ['Heebo', 'system-ui', 'sans-serif'],
       },
       animation: {
         'glow': 'glow 2s ease-in-out infinite alternate',

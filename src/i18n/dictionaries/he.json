@@ -71,8 +71,8 @@
     "quoteAuthor": "— הפילוסופיה שלי לפיתוח"
   },
   "skills": {
-    "title": "ה",
-    "titleHighlight": "מומחיות שלי",
+    "title": "",
+    "titleHighlight": "המומחיות שלי",
     "subtitle": "פתרונות אינטרנט מותאמים לצרכים שלך, מיצירה ועד תחזוקה",
     "areas": {
       "websites": {
@@ -111,8 +111,8 @@
     "technologies": "טכנולוגיות בשימוש"
   },
   "services": {
-    "title": "ה",
-    "titleHighlight": "שירותים שלי",
+    "title": "",
+    "titleHighlight": "השירותים שלי",
     "subtitle": "מ-WordPress מתקדם ועד Full-Code מותאם אישית, פתרונות מהירים, מודרניים ומוכווני תוצאות",
     "items": {
       "wordpress": {

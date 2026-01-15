@@ -57,7 +57,15 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={rtl ? 'rtl' : 'ltr'} className="scroll-smooth dark">
-      <body className="min-h-screen antialiased">
+      <head>
+        {rtl && (
+          <link
+            href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+          />
+        )}
+      </head>
+      <body className={`min-h-screen antialiased ${rtl ? 'font-heebo' : ''}`}>
         <ThemeProvider>
           <DictionaryProvider dictionary={dictionary} locale={locale}>
             <ParticleBackground />

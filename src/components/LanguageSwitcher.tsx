@@ -45,16 +45,13 @@ export function LanguageSwitcher() {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${
+        className={`flex items-center gap-1.5 px-2.5 py-2 rounded-lg transition-colors ${
           theme === 'dark'
             ? 'bg-ninja-gray/50 text-gray-400 hover:text-white hover:bg-ninja-purple/20'
             : 'bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-ninja-purple/10'
         }`}
       >
-        <span className="text-lg">{localeFlags[currentLocale]}</span>
-        <span className="hidden sm:inline text-sm font-medium">
-          {currentLocale.toUpperCase()}
-        </span>
+        <span className="text-xl">{localeFlags[currentLocale]}</span>
         <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </motion.button>
 
