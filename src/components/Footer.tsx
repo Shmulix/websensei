@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Heart, Code2, ArrowUp } from 'lucide-react'
+import { Heart, ArrowUp } from 'lucide-react'
+import Image from 'next/image'
 
 export function Footer() {
   const scrollToTop = () => {
@@ -15,12 +16,18 @@ export function Footer() {
           {/* Logo & Copyright */}
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <Code2 className="w-6 h-6 text-ninja-cyan" />
+              <div className="relative w-8 h-8">
+                <Image
+                  src="https://www.websensei.fr/wp-content/uploads/2025/04/websensei-logo.svg"
+                  alt="WebSensei Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <span className="text-lg font-bold">
-                <span className="text-ninja-cyan">Samuel</span>
-                <span className="text-white">.dev</span>
+                <span className="text-ninja-cyan">Web</span>
+                <span className="text-white">Sensei</span>
               </span>
-              <span className="jp-char text-ninja-purple/50">忍</span>
             </div>
           </div>
 
@@ -33,9 +40,10 @@ export function Footer() {
             >
               <Heart className="w-4 h-4 text-ninja-red fill-ninja-red" />
             </motion.div>
-            <span>et</span>
-            <span className="text-ninja-cyan">Next.js</span>
-            <span className="jp-char text-ninja-purple/30">愛</span>
+            <span>+</span>
+            <span className="text-ninja-cyan">IA</span>
+            <span>+</span>
+            <span className="text-ninja-purple">Next.js</span>
           </div>
 
           {/* Back to top */}
@@ -52,10 +60,10 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-ninja-purple/10 text-center">
           <p className="text-gray-600 text-sm">
-            © {new Date().getFullYear()} Samuel Perez. Tous droits réservés.
+            © {new Date().getFullYear()} Web Sensei - Samuel Felix Perez. Tous droits réservés.
           </p>
-          <p className="text-gray-700 text-xs mt-2 jp-char">
-            コードの道を極める
+          <p className="text-gray-700 text-xs mt-2">
+            Ramat Gan, Israel
           </p>
         </div>
       </div>

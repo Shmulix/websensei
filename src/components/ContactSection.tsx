@@ -2,27 +2,33 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { Send, Mail, MapPin, Github, Linkedin, Twitter, CheckCircle, AlertCircle } from 'lucide-react'
+import { Send, Mail, MapPin, Github, Linkedin, Globe, CheckCircle, AlertCircle, Clock } from 'lucide-react'
 
 const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'contact@samuelperez.dev',
-    href: 'mailto:contact@samuelperez.dev',
+    value: 'contact@websensei.fr',
+    href: 'mailto:contact@websensei.fr',
   },
   {
     icon: MapPin,
     label: 'Location',
-    value: 'France',
+    value: 'Ramat Gan, Israel',
+    href: null,
+  },
+  {
+    icon: Clock,
+    label: 'Réponse',
+    value: 'Sous 24h',
     href: null,
   },
 ]
 
 const socialLinks = [
-  { icon: Github, label: 'GitHub', href: 'https://github.com/samuelperez' },
+  { icon: Github, label: 'GitHub', href: 'https://github.com/shmulix' },
   { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/samuelperez' },
-  { icon: Twitter, label: 'Twitter', href: 'https://twitter.com/samuelperez' },
+  { icon: Globe, label: 'Website', href: 'https://websensei.fr' },
 ]
 
 export function ContactSection() {
@@ -32,6 +38,7 @@ export function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    project: '',
     message: '',
   })
 
@@ -46,7 +53,7 @@ export function ContactSection() {
     // Reset after 3 seconds
     setTimeout(() => {
       setFormState('idle')
-      setFormData({ name: '', email: '', message: '' })
+      setFormData({ name: '', email: '', project: '', message: '' })
     }, 3000)
   }
 
@@ -71,13 +78,13 @@ export function ContactSection() {
             <span className="h-px w-12 bg-ninja-gold" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            <span className="text-white">Me </span>
+            <span className="text-white">Discutons de </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-ninja-gold to-ninja-cyan">
-              Contacter
+              Votre Projet
             </span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Prêt à collaborer ? Envoyez-moi un message et je vous répondrai rapidement
+            Devis gratuit sous 24h. WordPress, full-code, performance : trouvons la meilleure solution ensemble.
           </p>
         </motion.div>
 
@@ -122,6 +129,27 @@ export function ContactSection() {
                   />
                 </div>
 
+                {/* Project Type */}
+                <div>
+                  <label htmlFor="project" className="block text-sm text-gray-400 mb-2">
+                    Type de projet <span className="jp-char text-ninja-purple/50">務</span>
+                  </label>
+                  <select
+                    id="project"
+                    value={formData.project}
+                    onChange={(e) => setFormData({ ...formData, project: e.target.value })}
+                    required
+                    className="w-full px-4 py-3 bg-ninja-gray/50 border border-ninja-purple/20 rounded-lg text-white focus:border-ninja-cyan/50 focus:outline-none focus:ring-1 focus:ring-ninja-cyan/50 transition-all"
+                  >
+                    <option value="" className="bg-ninja-dark">Sélectionnez...</option>
+                    <option value="wordpress" className="bg-ninja-dark">Site WordPress</option>
+                    <option value="fullcode" className="bg-ninja-dark">Développement Full-Code</option>
+                    <option value="performance" className="bg-ninja-dark">Optimisation Performance</option>
+                    <option value="maintenance" className="bg-ninja-dark">Maintenance</option>
+                    <option value="other" className="bg-ninja-dark">Autre</option>
+                  </select>
+                </div>
+
                 {/* Message Input */}
                 <div>
                   <label htmlFor="message" className="block text-sm text-gray-400 mb-2">
@@ -132,9 +160,9 @@ export function ContactSection() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
-                    rows={5}
+                    rows={4}
                     className="w-full px-4 py-3 bg-ninja-gray/50 border border-ninja-purple/20 rounded-lg text-white placeholder-gray-500 focus:border-ninja-cyan/50 focus:outline-none focus:ring-1 focus:ring-ninja-cyan/50 transition-all resize-none"
-                    placeholder="Décrivez votre projet ou votre message..."
+                    placeholder="Décrivez votre projet..."
                   />
                 </div>
 
@@ -177,7 +205,7 @@ export function ContactSection() {
                   {formState === 'idle' && (
                     <>
                       <Send className="w-5 h-5" />
-                      Envoyer le message
+                      Envoyer
                       <span className="jp-char">送</span>
                     </>
                   )}
@@ -236,7 +264,7 @@ export function ContactSection() {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              <p className="text-gray-400 mb-4">Ou retrouvez-moi sur les réseaux</p>
+              <p className="text-gray-400 mb-4">Retrouvez-moi aussi sur</p>
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -265,10 +293,11 @@ export function ContactSection() {
               className="relative p-6 border-l-2 border-ninja-gold/50 mt-8"
             >
               <p className="text-gray-300 italic">
-                "Un bon ninja répond toujours à l'appel de la mission."
+                "Rapide, moderne, orienté résultats."
               </p>
+              <p className="text-ninja-cyan text-sm mt-2">— Web Sensei</p>
               <span className="absolute right-4 top-1/2 -translate-y-1/2 jp-char text-6xl text-ninja-purple/10">
-                忍
+                智
               </span>
             </motion.div>
           </motion.div>

@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Github, Linkedin, Mail, ExternalLink } from 'lucide-react'
+import { ChevronDown, Github, Linkedin, Mail, MapPin } from 'lucide-react'
 
 const codeLines = [
-  { text: 'const developer = {', delay: 0 },
-  { text: '  name: "Samuel Perez",', delay: 0.5 },
-  { text: '  title: "Full Stack Developer",', delay: 1 },
-  { text: '  passion: "Building amazing web experiences",', delay: 1.5 },
-  { text: '  skills: ["React", "Next.js", "TypeScript", "Node.js"],', delay: 2 },
-  { text: '  motto: "コードの道を極める" // Master the way of code', delay: 2.5 },
+  { text: 'const webSensei = {', delay: 0 },
+  { text: '  name: "Samuel Felix Perez",', delay: 0.5 },
+  { text: '  role: "Web Developer & AI-Driven Builder",', delay: 1 },
+  { text: '  location: "Ramat Gan, Israel",', delay: 1.5 },
+  { text: '  stack: ["WordPress", "Full-Code", "GSAP", "AI"],', delay: 2 },
+  { text: '  motto: "Je code vite parce que je code intelligemment"', delay: 2.5 },
   { text: '};', delay: 3 },
 ]
 
@@ -40,7 +40,7 @@ export function HeroSection() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            {/* Japanese Greeting */}
+            {/* Location Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -48,7 +48,10 @@ export function HeroSection() {
               className="flex items-center gap-3"
             >
               <span className="h-px w-12 bg-ninja-cyan" />
-              <span className="text-ninja-cyan text-sm">ようこそ • Bienvenue</span>
+              <span className="text-ninja-cyan text-sm flex items-center gap-2">
+                <MapPin className="w-3 h-3" />
+                Ramat Gan, Israel
+              </span>
             </motion.div>
 
             {/* Main Title */}
@@ -58,24 +61,24 @@ export function HeroSection() {
               transition={{ delay: 0.4 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
             >
-              <span className="text-white">Je suis </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-ninja-cyan to-ninja-purple">
-                Samuel Perez
+                Web Sensei
               </span>
             </motion.h1>
 
-            {/* Subtitle with Ninja Element */}
+            {/* Subtitle */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex items-center gap-4"
+              className="space-y-2"
             >
               <h2 className="text-xl sm:text-2xl text-gray-400">
-                Développeur Web{' '}
-                <span className="text-ninja-green">Full Stack</span>
+                Samuel Felix Perez
               </h2>
-              <span className="jp-char text-3xl text-ninja-purple/50 animate-pulse">忍</span>
+              <p className="text-lg text-ninja-green">
+                WordPress Expert • Full-Code Developer • AI-Driven
+              </p>
             </motion.div>
 
             {/* Description */}
@@ -85,9 +88,26 @@ export function HeroSection() {
               transition={{ delay: 0.8 }}
               className="text-gray-400 text-lg max-w-lg leading-relaxed"
             >
-              Comme un ninja maîtrise ses techniques, je perfectionne l'art du code pour créer des
-              expériences web modernes, performantes et élégantes.
+              Je crée des sites web modernes et performants, du WordPress avancé au full-code sur mesure.
+              L'IA est mon co-développeur : je code vite parce que je code <span className="text-ninja-cyan">intelligemment</span>.
             </motion.p>
+
+            {/* Tags */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+              className="flex flex-wrap gap-2"
+            >
+              {['WordPress', 'Full-Code', 'GSAP', 'IA', 'Performance', 'SEO'].map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 text-xs bg-ninja-gray/50 border border-ninja-purple/20 rounded-full text-gray-400"
+                >
+                  {tag}
+                </span>
+              ))}
+            </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
@@ -97,12 +117,12 @@ export function HeroSection() {
               className="flex flex-wrap gap-4 pt-4"
             >
               <motion.a
-                href="#projects"
+                href="#services"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-gradient-to-r from-ninja-purple to-ninja-cyan rounded-lg font-medium text-white shadow-lg shadow-ninja-purple/25 hover:shadow-ninja-cyan/25 transition-shadow"
               >
-                Voir mes projets
+                Voir mes services
               </motion.a>
               <motion.a
                 href="#contact"
@@ -122,10 +142,10 @@ export function HeroSection() {
               className="flex items-center gap-4 pt-6"
             >
               {[
-                { icon: Github, href: 'https://github.com/samuelperez', label: 'GitHub' },
+                { icon: Github, href: 'https://github.com/shmulix', label: 'GitHub' },
                 { icon: Linkedin, href: 'https://linkedin.com/in/samuelperez', label: 'LinkedIn' },
-                { icon: Mail, href: 'mailto:contact@samuelperez.dev', label: 'Email' },
-              ].map((social, index) => (
+                { icon: Mail, href: 'mailto:contact@websensei.fr', label: 'Email' },
+              ].map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
@@ -158,15 +178,15 @@ export function HeroSection() {
                   <div className="w-3 h-3 rounded-full bg-ninja-gold" />
                   <div className="w-3 h-3 rounded-full bg-ninja-green" />
                 </div>
-                <span className="ml-2 text-xs text-gray-500">samuel@ninja-dev ~ /portfolio</span>
+                <span className="ml-2 text-xs text-gray-500">samuel@websensei ~ /projects</span>
               </div>
 
               {/* Terminal Content */}
               <div className="p-6 font-mono text-sm">
                 <div className="flex items-center gap-2 text-gray-500 mb-4">
                   <span className="text-ninja-green">➜</span>
-                  <span className="text-ninja-cyan">~/portfolio</span>
-                  <span>cat developer.js</span>
+                  <span className="text-ninja-cyan">~/websensei</span>
+                  <span>cat profile.js</span>
                 </div>
 
                 <div className="space-y-1">
@@ -202,7 +222,7 @@ export function HeroSection() {
                     className="mt-4 flex items-center gap-2 text-gray-500"
                   >
                     <span className="text-ninja-green">➜</span>
-                    <span className="text-ninja-cyan">~/portfolio</span>
+                    <span className="text-ninja-cyan">~/websensei</span>
                     <span className="cursor" />
                   </motion.div>
                 )}
@@ -246,7 +266,6 @@ export function HeroSection() {
 }
 
 function CodeLine({ text }: { text: string }) {
-  // Simple syntax highlighting
   const highlightCode = (code: string) => {
     return code
       .replace(/(const|let|var)/g, '<span class="text-ninja-purple">$1</span>')
@@ -254,7 +273,7 @@ function CodeLine({ text }: { text: string }) {
       .replace(/(\[.*?\])/g, '<span class="text-ninja-gold">$1</span>')
       .replace(/(\/\/.*)/g, '<span class="text-gray-500 italic">$1</span>')
       .replace(/(\{|\}|;|,)/g, '<span class="text-gray-400">$1</span>')
-      .replace(/(name|title|passion|skills|motto):/g, '<span class="text-ninja-cyan">$1</span>:')
+      .replace(/(name|role|location|stack|motto):/g, '<span class="text-ninja-cyan">$1</span>:')
   }
 
   return (

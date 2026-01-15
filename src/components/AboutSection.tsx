@@ -3,29 +3,29 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Code2, Cpu, Zap, Target, BookOpen, Coffee } from 'lucide-react'
+import { Code2, Cpu, Zap, Target, Sparkles, Briefcase } from 'lucide-react'
 
 const stats = [
-  { value: '5+', label: 'Années d\'expérience', icon: Zap },
-  { value: '50+', label: 'Projets complétés', icon: Target },
-  { value: '∞', label: 'Passion pour le code', icon: Coffee },
+  { value: '2x', label: 'Profil hybride', icon: Briefcase },
+  { value: 'IA', label: 'Co-développeur', icon: Sparkles },
+  { value: '∞', label: 'Passion tech', icon: Zap },
 ]
 
 const philosophies = [
   {
-    kanji: '道',
-    meaning: 'La Voie',
-    description: 'Chaque ligne de code est une étape sur le chemin de la maîtrise.',
+    kanji: '速',
+    meaning: 'Rapidité',
+    description: 'Je code vite parce que je code intelligemment. L\'IA accélère mon time-to-market.',
   },
   {
-    kanji: '術',
-    meaning: 'La Technique',
-    description: 'Les meilleures solutions naissent de la précision et de l\'élégance.',
+    kanji: '質',
+    meaning: 'Qualité',
+    description: 'Clean code, clean UI, clean process. Performance et maintenabilité avant tout.',
   },
   {
-    kanji: '心',
-    meaning: 'L\'Esprit',
-    description: 'Comprendre les besoins avant d\'écrire la première ligne.',
+    kanji: '効',
+    meaning: 'Efficacité',
+    description: 'Pragmatique : choisir l\'outil le plus efficace, pas le plus à la mode.',
   },
 ]
 
@@ -50,13 +50,13 @@ export function AboutSection() {
             <span className="h-px w-12 bg-ninja-purple" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            <span className="text-white">À propos de </span>
+            <span className="text-white">Qui est </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-ninja-cyan to-ninja-purple">
-              moi
+              Web Sensei
             </span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Un développeur passionné qui fusionne l'art du code avec la philosophie ninja
+            Un profil hybride ultra-moderne : développement web + business + IA
           </p>
         </motion.div>
 
@@ -74,11 +74,11 @@ export function AboutSection() {
                   <Code2 className="w-6 h-6 text-ninja-purple" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-3">Mon Histoire</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">Freelance Web</h3>
                   <p className="text-gray-400 leading-relaxed">
-                    Salut ! Je suis Samuel Perez, développeur web full stack basé en France.
-                    Ma passion pour le développement a commencé il y a plus de 5 ans, et depuis,
-                    je n'ai jamais cessé d'apprendre et de me perfectionner.
+                    Création de sites web & solutions digitales. Du WordPress avancé
+                    (Elementor, Kadence, Crocoblock) au développement full-code sur mesure,
+                    accéléré par l'IA comme co-développeur.
                   </p>
                 </div>
               </div>
@@ -87,14 +87,14 @@ export function AboutSection() {
             <div className="card-ninja p-6">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-ninja-cyan/10 rounded-lg">
-                  <Cpu className="w-6 h-6 text-ninja-cyan" />
+                  <Briefcase className="w-6 h-6 text-ninja-cyan" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-3">Ma Mission</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">Business & Affiliation</h3>
                   <p className="text-gray-400 leading-relaxed">
-                    Créer des applications web modernes, performantes et intuitives.
-                    Je crois que le code doit être aussi élégant qu'efficace,
-                    comme les mouvements précis d'un ninja.
+                    Affiliate Manager + Operation Manager chez Ofran (location de voiture).
+                    Une double casquette qui me donne une vision complète :
+                    technique ET business.
                   </p>
                 </div>
               </div>
@@ -103,13 +103,14 @@ export function AboutSection() {
             <div className="card-ninja p-6">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-ninja-green/10 rounded-lg">
-                  <BookOpen className="w-6 h-6 text-ninja-green" />
+                  <Sparkles className="w-6 h-6 text-ninja-green" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-3">Mon Approche</h3>
+                  <h3 className="text-xl font-bold text-white mb-3">IA-Driven Development</h3>
                   <p className="text-gray-400 leading-relaxed">
-                    Je m'inspire de la philosophie ninja : précision, discrétion, efficacité.
-                    Chaque projet est une mission que j'accomplis avec dévouement et excellence.
+                    L'IA n'est pas un gadget, c'est un levier de productivité piloté par
+                    une vraie compréhension technique et métier. Génération de code propre,
+                    refactorisation, optimisation, debug : tout est accéléré.
                   </p>
                 </div>
               </div>
@@ -141,7 +142,7 @@ export function AboutSection() {
             className="space-y-6"
           >
             <h3 className="text-lg text-gray-400 mb-6">
-              Ma philosophie de développeur <span className="jp-char text-ninja-purple">武士道</span>
+              ADN & philosophie de travail <span className="jp-char text-ninja-purple">道</span>
             </h3>
 
             {philosophies.map((item, index) => (
@@ -173,7 +174,6 @@ export function AboutSection() {
                     <p className="text-gray-400 text-sm">{item.description}</p>
                   </div>
                 </div>
-                {/* Slash effect on hover */}
                 <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-ninja-cyan to-transparent opacity-0 group-hover:opacity-100 transform -translate-y-1/2 transition-opacity" />
               </motion.div>
             ))}
@@ -186,10 +186,10 @@ export function AboutSection() {
               className="relative mt-8 p-6 border-l-2 border-ninja-purple/50"
             >
               <p className="text-gray-300 italic text-lg">
-                "Le vrai ninja ne laisse pas de traces, seulement des résultats."
+                "Je code vite parce que je code intelligemment."
               </p>
-              <p className="text-ninja-cyan text-sm mt-2">— Ma philosophie de code</p>
-              <span className="absolute right-4 top-4 jp-char text-4xl text-ninja-purple/10">影</span>
+              <p className="text-ninja-cyan text-sm mt-2">— Ma philosophie de développement</p>
+              <span className="absolute right-4 top-4 jp-char text-4xl text-ninja-purple/10">智</span>
             </motion.div>
           </motion.div>
         </div>

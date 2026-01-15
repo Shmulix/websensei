@@ -5,47 +5,49 @@ import { useRef } from 'react'
 
 const skillCategories = [
   {
-    title: 'Frontend',
-    kanji: '表',
+    title: 'WordPress & CMS',
+    kanji: '基',
     skills: [
-      { name: 'React', level: 95, color: 'from-cyan-400 to-blue-500' },
-      { name: 'Next.js', level: 90, color: 'from-gray-400 to-gray-600' },
-      { name: 'TypeScript', level: 88, color: 'from-blue-400 to-blue-600' },
-      { name: 'Tailwind CSS', level: 92, color: 'from-teal-400 to-cyan-500' },
-      { name: 'Vue.js', level: 75, color: 'from-green-400 to-emerald-500' },
+      { name: 'WordPress', level: 95, color: 'from-blue-400 to-blue-600' },
+      { name: 'Elementor Pro', level: 95, color: 'from-pink-400 to-pink-600' },
+      { name: 'Kadence', level: 90, color: 'from-purple-400 to-purple-600' },
+      { name: 'Crocoblock', level: 85, color: 'from-orange-400 to-orange-600' },
+      { name: 'WooCommerce', level: 80, color: 'from-indigo-400 to-indigo-600' },
     ],
   },
   {
-    title: 'Backend',
-    kanji: '裏',
+    title: 'Full-Code & Front',
+    kanji: '術',
     skills: [
-      { name: 'Node.js', level: 88, color: 'from-green-400 to-green-600' },
-      { name: 'Python', level: 80, color: 'from-yellow-400 to-yellow-600' },
-      { name: 'PostgreSQL', level: 85, color: 'from-blue-400 to-indigo-500' },
-      { name: 'MongoDB', level: 82, color: 'from-green-500 to-green-700' },
-      { name: 'GraphQL', level: 78, color: 'from-pink-400 to-pink-600' },
+      { name: 'HTML / CSS', level: 95, color: 'from-orange-400 to-red-500' },
+      { name: 'JavaScript', level: 85, color: 'from-yellow-400 to-yellow-600' },
+      { name: 'GSAP / ScrollTrigger', level: 80, color: 'from-green-400 to-green-600' },
+      { name: 'React / Next.js', level: 75, color: 'from-cyan-400 to-blue-500' },
+      { name: 'Tailwind CSS', level: 85, color: 'from-teal-400 to-cyan-500' },
     ],
   },
   {
-    title: 'DevOps & Tools',
-    kanji: '具',
+    title: 'Back & Performance',
+    kanji: '力',
     skills: [
-      { name: 'Git', level: 90, color: 'from-orange-400 to-red-500' },
-      { name: 'Docker', level: 75, color: 'from-blue-400 to-blue-600' },
-      { name: 'AWS', level: 70, color: 'from-yellow-400 to-orange-500' },
-      { name: 'CI/CD', level: 78, color: 'from-purple-400 to-purple-600' },
-      { name: 'Linux', level: 80, color: 'from-gray-400 to-gray-600' },
+      { name: 'PHP', level: 80, color: 'from-indigo-400 to-purple-500' },
+      { name: 'MySQL / SQLite', level: 75, color: 'from-blue-400 to-blue-600' },
+      { name: 'SEO Technique', level: 85, color: 'from-green-400 to-emerald-500' },
+      { name: 'Web Performance', level: 90, color: 'from-red-400 to-orange-500' },
+      { name: 'Git / GitHub', level: 85, color: 'from-gray-400 to-gray-600' },
     ],
   },
 ]
 
-const techLogos = [
-  { name: 'React', symbol: '⚛️' },
-  { name: 'Next.js', symbol: '▲' },
-  { name: 'TypeScript', symbol: 'TS' },
-  { name: 'Node.js', symbol: '⬢' },
-  { name: 'Python', symbol: '🐍' },
-  { name: 'Git', symbol: '⎇' },
+const tools = [
+  { name: 'WordPress', symbol: 'W' },
+  { name: 'Elementor', symbol: 'E' },
+  { name: 'Claude AI', symbol: '◉' },
+  { name: 'Cursor', symbol: '▶' },
+  { name: 'VS Code', symbol: '⌨' },
+  { name: 'Figma', symbol: '◈' },
+  { name: 'GitHub', symbol: '⎇' },
+  { name: 'Vercel', symbol: '▲' },
 ]
 
 export function SkillsSection() {
@@ -72,34 +74,34 @@ export function SkillsSection() {
             <span className="h-px w-12 bg-ninja-cyan" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            <span className="text-white">Mes </span>
+            <span className="text-white">Stack </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-ninja-purple to-ninja-cyan">
-              Compétences
+              Technique
             </span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Les techniques que j'ai maîtrisées au fil des années d'entraînement
+            Du WordPress avancé au full-code sur mesure, le bon outil pour chaque projet
           </p>
         </motion.div>
 
-        {/* Tech Logos Scroll */}
+        {/* Tools */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center gap-8 mb-16 flex-wrap"
+          className="flex justify-center gap-6 mb-16 flex-wrap"
         >
-          {techLogos.map((tech, index) => (
+          {tools.map((tech, index) => (
             <motion.div
               key={tech.name}
               initial={{ opacity: 0, scale: 0 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+              transition={{ duration: 0.4, delay: 0.3 + index * 0.08 }}
               whileHover={{ scale: 1.2, y: -5 }}
               className="flex flex-col items-center gap-2 group cursor-pointer"
             >
-              <div className="w-16 h-16 flex items-center justify-center bg-ninja-gray/50 rounded-xl border border-ninja-purple/20 group-hover:border-ninja-cyan/50 transition-colors">
-                <span className="text-2xl">{tech.symbol}</span>
+              <div className="w-14 h-14 flex items-center justify-center bg-ninja-gray/50 rounded-xl border border-ninja-purple/20 group-hover:border-ninja-cyan/50 transition-colors">
+                <span className="text-xl font-bold text-gray-400 group-hover:text-ninja-cyan transition-colors">{tech.symbol}</span>
               </div>
               <span className="text-xs text-gray-500 group-hover:text-ninja-cyan transition-colors">
                 {tech.name}
@@ -150,18 +152,21 @@ export function SkillsSection() {
           ))}
         </div>
 
-        {/* Ninja Skills Summary */}
+        {/* AI Note */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-ninja-dark/80 rounded-full border border-ninja-purple/20">
-            <span className="text-gray-400">Niveau global:</span>
-            <span className="text-ninja-cyan font-bold">Ninja du Code</span>
-            <span className="jp-char text-ninja-purple">上忍</span>
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-ninja-dark/80 rounded-full border border-ninja-purple/20">
+            <span className="text-gray-400">Boosté par:</span>
+            <span className="text-ninja-cyan font-bold">IA Co-développeur</span>
+            <span className="jp-char text-ninja-purple">智</span>
           </div>
+          <p className="text-gray-500 text-sm mt-4 max-w-lg mx-auto">
+            L'IA n'est pas un gadget, c'est un levier de productivité piloté par une vraie compréhension technique.
+          </p>
         </motion.div>
       </div>
     </section>

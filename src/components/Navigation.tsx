@@ -9,8 +9,8 @@ import Image from 'next/image'
 const navItems = [
   { name: 'Accueil', href: '#home', kanji: '家' },
   { name: 'À propos', href: '#about', kanji: '者' },
-  { name: 'Skills', href: '#skills', kanji: '術' },
-  { name: 'Projets', href: '#projects', kanji: '作' },
+  { name: 'Stack', href: '#skills', kanji: '術' },
+  { name: 'Services', href: '#services', kanji: '務' },
   { name: 'Contact', href: '#contact', kanji: '連' },
 ]
 
