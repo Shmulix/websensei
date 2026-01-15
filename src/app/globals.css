@@ -4,15 +4,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base Colors */
 :root {
-  --ninja-black: #0a0a0a;
-  --ninja-dark: #121212;
-  --ninja-gray: #1a1a2e;
   --ninja-purple: #6366f1;
   --ninja-cyan: #22d3ee;
   --ninja-green: #10b981;
   --ninja-red: #ef4444;
   --ninja-gold: #fbbf24;
+}
+
+/* Dark Theme (Default) */
+:root, .dark {
+  --ninja-black: #0a0a0a;
+  --ninja-dark: #121212;
+  --ninja-gray: #1a1a2e;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #121212;
+  --bg-tertiary: #1a1a2e;
+  --text-primary: #e5e5e5;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --border-color: rgba(99, 102, 241, 0.2);
+  --card-bg: rgba(18, 18, 18, 0.8);
+  --nav-bg: rgba(10, 10, 10, 0.9);
+}
+
+/* Light Theme */
+.light {
+  --ninja-black: #ffffff;
+  --ninja-dark: #f8fafc;
+  --ninja-gray: #e2e8f0;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: rgba(99, 102, 241, 0.3);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --nav-bg: rgba(255, 255, 255, 0.95);
 }
 
 * {
@@ -26,10 +56,11 @@ html {
 }
 
 body {
-  background: var(--ninja-black);
-  color: #e5e5e5;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: 'JetBrains Mono', monospace;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Scrollbar - Ninja Style */
@@ -38,7 +69,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--ninja-dark);
+  background: var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -53,7 +84,7 @@ body {
 /* Selection */
 ::selection {
   background: rgba(99, 102, 241, 0.3);
-  color: #fff;
+  color: var(--text-primary);
 }
 
 /* Terminal Cursor */
@@ -79,6 +110,12 @@ body {
   text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
 }
 
+/* Light mode adjustments for glow */
+.light .text-glow,
+.light .text-glow-sm {
+  text-shadow: none;
+}
+
 /* Kanji Background Pattern */
 .kanji-pattern {
   position: fixed;
@@ -96,6 +133,10 @@ body {
   overflow: hidden;
 }
 
+.light .kanji-pattern {
+  opacity: 0.04;
+}
+
 /* Grid Background */
 .bg-grid {
   background-image:
@@ -104,10 +145,16 @@ body {
   background-size: 50px 50px;
 }
 
+.light .bg-grid {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+}
+
 /* Gradient Border */
 .gradient-border {
   position: relative;
-  background: var(--ninja-dark);
+  background: var(--bg-secondary);
   border-radius: 12px;
 }
 
@@ -128,8 +175,8 @@ body {
 
 /* Code Block Style */
 .code-block {
-  background: rgba(18, 18, 18, 0.9);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1rem;
   font-family: 'JetBrains Mono', monospace;
@@ -171,6 +218,11 @@ body {
   animation: floatParticle 10s infinite ease-in-out;
 }
 
+.light .particle {
+  opacity: 0.3;
+  background: var(--ninja-purple);
+}
+
 @keyframes floatParticle {
   0%, 100% { transform: translateY(0) translateX(0); }
   25% { transform: translateY(-30px) translateX(10px); }
@@ -208,14 +260,18 @@ body {
   box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
 }
 
+.light .btn-ninja:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
 .btn-ninja:hover::before {
   left: 100%;
 }
 
 /* Card Hover Effect */
 .card-ninja {
-  background: rgba(18, 18, 18, 0.8);
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
@@ -226,10 +282,81 @@ body {
   box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
 }
 
+.light .card-ninja:hover {
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+}
+
 /* Japanese Characters Decoration */
 .jp-char {
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 700;
+}
+
+/* Theme-aware background classes */
+.bg-ninja-black {
+  background-color: var(--bg-primary);
+}
+
+.bg-ninja-dark {
+  background-color: var(--bg-secondary);
+}
+
+.bg-ninja-gray {
+  background-color: var(--bg-tertiary);
+}
+
+/* Theme-aware text colors */
+.text-theme-primary {
+  color: var(--text-primary);
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary);
+}
+
+.text-theme-muted {
+  color: var(--text-muted);
+}
+
+/* Light mode specific overrides */
+.light .bg-ninja-dark\/80 {
+  background-color: rgba(248, 250, 252, 0.9);
+}
+
+.light .bg-ninja-dark\/95 {
+  background-color: rgba(248, 250, 252, 0.98);
+}
+
+.light .bg-ninja-gray\/50 {
+  background-color: rgba(226, 232, 240, 0.5);
+}
+
+.light .bg-ninja-black\/90 {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.light .text-white {
+  color: var(--text-primary);
+}
+
+.light .text-gray-400 {
+  color: var(--text-secondary);
+}
+
+.light .text-gray-500 {
+  color: var(--text-muted);
+}
+
+.light .text-gray-600 {
+  color: #64748b;
+}
+
+.light .border-ninja-purple\/20 {
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+.light .border-ninja-purple\/10 {
+  border-color: rgba(99, 102, 241, 0.15);
 }
 
 /* Responsive Typography */

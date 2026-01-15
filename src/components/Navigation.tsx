@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Code2, Terminal } from 'lucide-react'
+import { Menu, X, Code2, Sun, Moon } from 'lucide-react'
+import { useTheme } from './ThemeProvider'
+import Image from 'next/image'
 
 const navItems = [
   { name: 'Accueil', href: '#home', kanji: '家' },
@@ -16,6 +18,7 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +49,11 @@ export function Navigation() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-ninja-black/90 backdrop-blur-md border-b border-ninja-purple/20' : ''
+          scrolled
+            ? theme === 'dark'
+              ? 'bg-ninja-black/90 backdrop-blur-md border-b border-ninja-purple/20'
+              : 'bg-white/90 backdrop-blur-md border-b border-ninja-purple/20 shadow-sm'
+            : ''
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,17 +65,18 @@ export function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="relative">
-                <Terminal className="w-8 h-8 text-ninja-cyan" />
-                <motion.div
-                  className="absolute -top-1 -right-1 w-3 h-3 bg-ninja-green rounded-full"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
+              <div className="relative w-10 h-10">
+                <Image
+                  src="https://www.websensei.fr/wp-content/uploads/2025/04/websensei-logo.svg"
+                  alt="WebSensei Logo"
+                  fill
+                  className="object-contain"
+                  priority
                 />
               </div>
               <span className="text-xl font-bold">
-                <span className="text-ninja-cyan">Samuel</span>
-                <span className="text-white">.dev</span>
+                <span className="text-ninja-cyan">Web</span>
+                <span className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>Sensei</span>
               </span>
               <span className="jp-char text-ninja-purple/50 text-sm hidden sm:block">忍</span>
             </motion.a>
@@ -85,7 +93,9 @@ export function Navigation() {
                   className={`relative px-4 py-2 text-sm transition-colors group ${
                     activeSection === item.href.slice(1)
                       ? 'text-ninja-cyan'
-                      : 'text-gray-400 hover:text-white'
+                      : theme === 'dark'
+                        ? 'text-gray-400 hover:text-white'
+                        : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
                   <span className="relative z-10 flex items-center gap-1">
@@ -103,16 +113,68 @@ export function Navigation() {
                   )}
                 </motion.a>
               ))}
+
+              {/* Theme Toggle Button */}
+              <motion.button
+                onClick={toggleTheme}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={`ml-4 p-2 rounded-lg transition-colors ${
+                  theme === 'dark'
+                    ? 'bg-ninja-gray/50 text-ninja-gold hover:bg-ninja-purple/20'
+                    : 'bg-gray-100 text-ninja-purple hover:bg-ninja-purple/10'
+                }`}
+                aria-label="Toggle theme"
+              >
+                <AnimatePresence mode="wait">
+                  {theme === 'dark' ? (
+                    <motion.div
+                      key="sun"
+                      initial={{ rotate: -90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Sun className="w-5 h-5" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="moon"
+                      initial={{ rotate: 90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: -90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Moon className="w-5 h-5" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-gray-400 hover:text-white"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </motion.button>
+            {/* Mobile Menu Button + Theme Toggle */}
+            <div className="flex items-center gap-2 md:hidden">
+              <motion.button
+                onClick={toggleTheme}
+                whileTap={{ scale: 0.9 }}
+                className={`p-2 rounded-lg ${
+                  theme === 'dark'
+                    ? 'text-ninja-gold'
+                    : 'text-ninja-purple'
+                }`}
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </motion.button>
+
+              <motion.button
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setIsOpen(!isOpen)}
+                className={`p-2 ${theme === 'dark' ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </motion.button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -125,7 +187,11 @@ export function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed inset-y-0 right-0 z-40 w-64 bg-ninja-dark/95 backdrop-blur-lg border-l border-ninja-purple/20 md:hidden"
+            className={`fixed inset-y-0 right-0 z-40 w-64 backdrop-blur-lg border-l md:hidden ${
+              theme === 'dark'
+                ? 'bg-ninja-dark/95 border-ninja-purple/20'
+                : 'bg-white/95 border-ninja-purple/20'
+            }`}
           >
             <div className="flex flex-col gap-2 p-6 mt-16">
               {navItems.map((item, index) => (
@@ -139,7 +205,9 @@ export function Navigation() {
                   className={`flex items-center justify-between px-4 py-3 rounded-lg transition-colors ${
                     activeSection === item.href.slice(1)
                       ? 'bg-ninja-purple/20 text-ninja-cyan'
-                      : 'text-gray-400 hover:bg-ninja-gray hover:text-white'
+                      : theme === 'dark'
+                        ? 'text-gray-400 hover:bg-ninja-gray hover:text-white'
+                        : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                   }`}
                 >
                   <span>{item.name}</span>
