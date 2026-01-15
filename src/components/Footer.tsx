@@ -13,22 +13,14 @@ export function Footer() {
     <footer className="relative py-12 px-4 bg-ninja-black border-t border-ninja-purple/10">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo & Copyright */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="relative w-8 h-8">
-                <Image
-                  src="https://www.websensei.fr/wp-content/uploads/2025/04/websensei-logo.svg"
-                  alt="WebSensei Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-lg font-bold">
-                <span className="text-ninja-cyan">Web</span>
-                <span className="text-white">Sensei</span>
-              </span>
-            </div>
+          {/* Logo */}
+          <div className="relative h-6 w-28">
+            <Image
+              src="https://www.websensei.fr/wp-content/uploads/2025/05/websensei-white-logo.svg"
+              alt="WebSensei"
+              fill
+              className="object-contain object-left"
+            />
           </div>
 
           {/* Made with love */}

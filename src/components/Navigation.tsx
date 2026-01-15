@@ -61,24 +61,19 @@ export function Navigation() {
             {/* Logo */}
             <motion.a
               href="#home"
-              className="flex items-center gap-2 group"
+              className="flex items-center group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="relative w-10 h-10">
+              <div className="relative h-8 w-36">
                 <Image
-                  src="https://www.websensei.fr/wp-content/uploads/2025/04/websensei-logo.svg"
-                  alt="WebSensei Logo"
+                  src="https://www.websensei.fr/wp-content/uploads/2025/05/websensei-white-logo.svg"
+                  alt="WebSensei"
                   fill
-                  className="object-contain"
+                  className="object-contain object-left"
                   priority
                 />
               </div>
-              <span className="text-xl font-bold">
-                <span className="text-ninja-cyan">Web</span>
-                <span className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>Sensei</span>
-              </span>
-              <span className="jp-char text-ninja-purple/50 text-sm hidden sm:block">忍</span>
             </motion.a>
 
             {/* Desktop Navigation */}
