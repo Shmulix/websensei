@@ -1,5 +1,10 @@
 import '@/app/globals.css'
-import { GSAPProvider } from '@/components/GSAPProvider'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'דור ניר | מומחה PPC & Google Ads',
+  description: 'מומחה Google Ads מוסמך - קמפיינים שמביאים תוצאות',
+}
 
 export default function DorNirLayout({
   children,
@@ -14,10 +19,8 @@ export default function DorNirLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-heebo antialiased">
-        <GSAPProvider>
-          {children}
-        </GSAPProvider>
+      <body className="font-heebo antialiased bg-ninja-black">
+        {children}
       </body>
     </html>
   )
