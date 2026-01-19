@@ -30,6 +30,11 @@ function getLocale(request: NextRequest): Locale {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
+  // Skip locale redirect for dedicated landing pages
+  if (pathname.startsWith('/dor-nir')) {
+    return NextResponse.next()
+  }
+
   // Check if there is any supported locale in the pathname
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
