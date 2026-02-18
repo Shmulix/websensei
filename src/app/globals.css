@@ -32,16 +32,16 @@
   --card-bg: rgba(18, 18, 18, 0.9);
 }
 
-/* Light Theme — warm cream palette, easier on the eyes */
+/* Light Theme — indigo-tinted, professional, easy on the eyes */
 .light {
-  --bg-primary: #F7F3EE;
-  --bg-secondary: #EDE8E1;
-  --bg-tertiary: #E2DCD5;
-  --text-primary: #1C1917;
-  --text-secondary: #57534E;
-  --text-muted: #78716C;
-  --border-color: rgba(99, 102, 241, 0.18);
-  --card-bg: #FAF7F3;
+  --bg-primary: #F1EFFD;
+  --bg-secondary: #E5E1F8;
+  --bg-tertiary: #D6D1EF;
+  --text-primary: #16133A;
+  --text-secondary: #3D3A5C;
+  --text-muted: #6B6888;
+  --border-color: rgba(99, 102, 241, 0.22);
+  --card-bg: #F7F5FF;
 }
 
 * {
@@ -106,8 +106,8 @@ body {
 
 .light .bg-grid {
   background-image:
-    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
 }
 
 /* Card Style */
@@ -126,13 +126,13 @@ body {
 
 .light .card-ninja {
   background: var(--card-bg);
-  border-color: rgba(99, 102, 241, 0.15);
-  box-shadow: 0 2px 8px rgba(90, 60, 30, 0.06);
+  border-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.08);
 }
 
 .light .card-ninja:hover {
-  border-color: rgba(99, 102, 241, 0.35);
-  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.1), 0 2px 8px rgba(90, 60, 30, 0.04);
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15), 0 2px 8px rgba(99, 102, 241, 0.06);
 }
 
 /* Theme-aware backgrounds */
@@ -150,49 +150,49 @@ body {
 
 /* Light mode specific fixes */
 .light .bg-ninja-dark\/30 {
-  background-color: #EDE8E1;
+  background-color: #E5E1F8;
 }
 
 .light .bg-ninja-dark\/50 {
-  background-color: #EDE8E1;
+  background-color: #E5E1F8;
 }
 
 .light .bg-ninja-dark\/80,
 .light .bg-ninja-dark\/95 {
-  background-color: #F7F3EE;
+  background-color: #F1EFFD;
 }
 
 .light .bg-ninja-gray\/50 {
-  background-color: #E2DCD5;
+  background-color: #D6D1EF;
 }
 
 .light .bg-ninja-black\/90 {
-  background-color: #F7F3EE;
+  background-color: #F1EFFD;
 }
 
 /* Text colors for light mode */
 .light .text-white {
-  color: #1C1917;
+  color: #16133A;
 }
 
 .light .text-gray-300 {
-  color: #3C3734;
+  color: #2E2B4A;
 }
 
 .light .text-gray-400 {
-  color: #57534E;
+  color: #3D3A5C;
 }
 
 .light .text-gray-500 {
-  color: #78716C;
+  color: #6B6888;
 }
 
 .light .text-gray-600 {
-  color: #57534E;
+  color: #3D3A5C;
 }
 
 .light .text-gray-700 {
-  color: #44403C;
+  color: #2E2B4A;
 }
 
 /* Border colors for light mode */
@@ -205,14 +205,14 @@ body {
 .light input,
 .light select,
 .light textarea {
-  background-color: #FAF7F3 !important;
-  border-color: rgba(99, 102, 241, 0.2) !important;
-  color: #1C1917 !important;
+  background-color: #F7F5FF !important;
+  border-color: rgba(99, 102, 241, 0.25) !important;
+  color: #16133A !important;
 }
 
 .light input::placeholder,
 .light textarea::placeholder {
-  color: #78716C !important;
+  color: #6B6888 !important;
 }
 
 /* Responsive Typography */

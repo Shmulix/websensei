@@ -21,13 +21,10 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="relative h-8 w-36">
             <Image
-              src={theme === 'dark'
-                ? "https://www.websensei.fr/wp-content/uploads/2025/05/websensei-white-logo.svg"
-                : "https://www.websensei.fr/wp-content/uploads/2025/04/websensei-logo.svg"
-              }
+              src="https://www.websensei.fr/wp-content/uploads/2025/05/websensei-white-logo.svg"
               alt="WebSensei"
               fill
-              className="object-contain object-left"
+              className={`object-contain object-left transition-all duration-300 ${theme !== 'dark' ? 'brightness-0' : ''}`}
             />
           </div>
 
