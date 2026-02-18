@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect } from 'react'
 import { Globe, Code2, Zap, Palette, Settings, Search, BarChart3, Shield } from 'lucide-react'
 import { useDictionary } from '@/i18n/DictionaryProvider'
+import { TechMarquee } from './TechMarquee'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -23,7 +24,6 @@ const colors = [
   'from-red-400 to-red-500',
 ]
 
-const technologies = ['WordPress', 'React', 'Next.js', 'Tailwind CSS', 'Figma', 'Analytics']
 
 export function SkillsSection() {
   const ref = useRef(null)
@@ -161,23 +161,10 @@ export function SkillsSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 text-center"
+          className="mt-16"
         >
-          <p className="text-gray-500 text-sm mb-4">{t.technologies}</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {technologies.map((tech, index) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.3, delay: 0.9 + index * 0.05 }}
-                whileHover={{ scale: 1.1, y: -3 }}
-                className="px-4 py-2 bg-ninja-gray/50 rounded-full text-sm text-gray-400 border border-ninja-purple/20 cursor-default hover:border-ninja-cyan/50 hover:text-ninja-cyan transition-all"
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </div>
+          <p className="text-gray-500 text-sm text-center mb-2">{t.technologies}</p>
+          <TechMarquee />
         </motion.div>
       </div>
     </section>
