@@ -54,7 +54,7 @@ export function Navigation() {
           scrolled
             ? theme === 'dark'
               ? 'bg-[#0a0a0a]/95 backdrop-blur-md border-b border-ninja-purple/20'
-              : 'bg-[#F7F3EE]/95 backdrop-blur-md border-b border-ninja-purple/15'
+              : 'bg-[#F1EFFD]/95 backdrop-blur-md border-b border-ninja-purple/20'
             : ''
         }`}
       >
@@ -192,7 +192,7 @@ export function Navigation() {
             className={`fixed inset-y-0 right-0 z-40 w-64 backdrop-blur-lg border-l md:hidden ${
               theme === 'dark'
                 ? 'bg-[#121212]/95 border-ninja-purple/20'
-                : 'bg-[#F7F3EE]/95 border-ninja-purple/15'
+                : 'bg-[#F1EFFD]/95 border-ninja-purple/20'
             }`}
           >
             <div className="flex flex-col gap-2 p-6 mt-16">
