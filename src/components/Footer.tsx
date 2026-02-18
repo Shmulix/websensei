@@ -4,10 +4,12 @@ import { motion } from 'framer-motion'
 import { Heart, ArrowUp } from 'lucide-react'
 import Image from 'next/image'
 import { useDictionary } from '@/i18n/DictionaryProvider'
+import { useTheme } from './ThemeProvider'
 
 export function Footer() {
   const { dictionary } = useDictionary()
   const t = dictionary.footer
+  const { theme } = useTheme()
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -19,7 +21,10 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="relative h-8 w-36">
             <Image
-              src="https://www.websensei.fr/wp-content/uploads/2025/05/websensei-white-logo.svg"
+              src={theme === 'dark'
+                ? "https://www.websensei.fr/wp-content/uploads/2025/05/websensei-white-logo.svg"
+                : "https://www.websensei.fr/wp-content/uploads/2025/04/websensei-logo.svg"
+              }
               alt="WebSensei"
               fill
               className="object-contain object-left"

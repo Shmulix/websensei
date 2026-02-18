@@ -32,16 +32,16 @@
   --card-bg: rgba(18, 18, 18, 0.9);
 }
 
-/* Light Theme */
+/* Light Theme — warm cream palette, easier on the eyes */
 .light {
-  --bg-primary: #ffffff;
-  --bg-secondary: #fafafa;
-  --bg-tertiary: #f5f5f5;
-  --text-primary: #18181b;
-  --text-secondary: #52525b;
-  --text-muted: #71717a;
-  --border-color: rgba(99, 102, 241, 0.15);
-  --card-bg: #ffffff;
+  --bg-primary: #F7F3EE;
+  --bg-secondary: #EDE8E1;
+  --bg-tertiary: #E2DCD5;
+  --text-primary: #1C1917;
+  --text-secondary: #57534E;
+  --text-muted: #78716C;
+  --border-color: rgba(99, 102, 241, 0.18);
+  --card-bg: #FAF7F3;
 }
 
 * {
@@ -125,14 +125,14 @@ body {
 }
 
 .light .card-ninja {
-  background: #ffffff;
-  border-color: #e5e7eb;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background: var(--card-bg);
+  border-color: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 2px 8px rgba(90, 60, 30, 0.06);
 }
 
 .light .card-ninja:hover {
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.08);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.1), 0 2px 8px rgba(90, 60, 30, 0.04);
 }
 
 /* Theme-aware backgrounds */
@@ -150,61 +150,69 @@ body {
 
 /* Light mode specific fixes */
 .light .bg-ninja-dark\/30 {
-  background-color: #fafafa;
+  background-color: #EDE8E1;
+}
+
+.light .bg-ninja-dark\/50 {
+  background-color: #EDE8E1;
 }
 
 .light .bg-ninja-dark\/80,
 .light .bg-ninja-dark\/95 {
-  background-color: #ffffff;
+  background-color: #F7F3EE;
 }
 
 .light .bg-ninja-gray\/50 {
-  background-color: #f5f5f5;
+  background-color: #E2DCD5;
 }
 
 .light .bg-ninja-black\/90 {
-  background-color: #ffffff;
+  background-color: #F7F3EE;
 }
 
 /* Text colors for light mode */
 .light .text-white {
-  color: #18181b;
+  color: #1C1917;
 }
 
 .light .text-gray-300 {
-  color: #3f3f46;
+  color: #3C3734;
 }
 
 .light .text-gray-400 {
-  color: #52525b;
+  color: #57534E;
 }
 
 .light .text-gray-500 {
-  color: #71717a;
+  color: #78716C;
 }
 
 .light .text-gray-600 {
-  color: #52525b;
+  color: #57534E;
+}
+
+.light .text-gray-700 {
+  color: #44403C;
 }
 
 /* Border colors for light mode */
 .light .border-ninja-purple\/20,
 .light .border-ninja-purple\/10 {
-  border-color: #e5e7eb;
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
 /* Input styles for light mode */
 .light input,
 .light select,
 .light textarea {
-  background-color: #f9fafb !important;
-  border-color: #e5e7eb !important;
-  color: #18181b !important;
+  background-color: #FAF7F3 !important;
+  border-color: rgba(99, 102, 241, 0.2) !important;
+  color: #1C1917 !important;
 }
 
 .light input::placeholder,
 .light textarea::placeholder {
-  color: #9ca3af !important;
+  color: #78716C !important;
 }
 
 /* Responsive Typography */
@@ -225,6 +233,11 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px 200px;
+}
+
+.light .noise-overlay::before {
+  opacity: 0.04;
+  mix-blend-mode: multiply;
 }
 
 /* ─── Marquee animation ─── */
@@ -336,4 +349,12 @@ body {
   );
   pointer-events: none;
   transition: background 0.1s ease;
+}
+
+.light .hero-spotlight {
+  background: radial-gradient(
+    700px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(99, 102, 241, 0.07),
+    transparent 40%
+  );
 }
