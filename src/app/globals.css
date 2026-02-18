@@ -32,16 +32,16 @@
   --card-bg: rgba(18, 18, 18, 0.9);
 }
 
-/* Light Theme */
+/* Light Theme — indigo-tinted, professional, easy on the eyes */
 .light {
-  --bg-primary: #ffffff;
-  --bg-secondary: #fafafa;
-  --bg-tertiary: #f5f5f5;
-  --text-primary: #18181b;
-  --text-secondary: #52525b;
-  --text-muted: #71717a;
-  --border-color: rgba(99, 102, 241, 0.15);
-  --card-bg: #ffffff;
+  --bg-primary: #F1EFFD;
+  --bg-secondary: #E5E1F8;
+  --bg-tertiary: #D6D1EF;
+  --text-primary: #16133A;
+  --text-secondary: #3D3A5C;
+  --text-muted: #6B6888;
+  --border-color: rgba(99, 102, 241, 0.22);
+  --card-bg: #F7F5FF;
 }
 
 * {
@@ -106,8 +106,8 @@ body {
 
 .light .bg-grid {
   background-image:
-    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
 }
 
 /* Card Style */
@@ -125,14 +125,14 @@ body {
 }
 
 .light .card-ninja {
-  background: #ffffff;
-  border-color: #e5e7eb;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background: var(--card-bg);
+  border-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.08);
 }
 
 .light .card-ninja:hover {
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.08);
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15), 0 2px 8px rgba(99, 102, 241, 0.06);
 }
 
 /* Theme-aware backgrounds */
@@ -150,61 +150,69 @@ body {
 
 /* Light mode specific fixes */
 .light .bg-ninja-dark\/30 {
-  background-color: #fafafa;
+  background-color: #E5E1F8;
+}
+
+.light .bg-ninja-dark\/50 {
+  background-color: #E5E1F8;
 }
 
 .light .bg-ninja-dark\/80,
 .light .bg-ninja-dark\/95 {
-  background-color: #ffffff;
+  background-color: #F1EFFD;
 }
 
 .light .bg-ninja-gray\/50 {
-  background-color: #f5f5f5;
+  background-color: #D6D1EF;
 }
 
 .light .bg-ninja-black\/90 {
-  background-color: #ffffff;
+  background-color: #F1EFFD;
 }
 
 /* Text colors for light mode */
 .light .text-white {
-  color: #18181b;
+  color: #16133A;
 }
 
 .light .text-gray-300 {
-  color: #3f3f46;
+  color: #2E2B4A;
 }
 
 .light .text-gray-400 {
-  color: #52525b;
+  color: #3D3A5C;
 }
 
 .light .text-gray-500 {
-  color: #71717a;
+  color: #6B6888;
 }
 
 .light .text-gray-600 {
-  color: #52525b;
+  color: #3D3A5C;
+}
+
+.light .text-gray-700 {
+  color: #2E2B4A;
 }
 
 /* Border colors for light mode */
 .light .border-ninja-purple\/20,
 .light .border-ninja-purple\/10 {
-  border-color: #e5e7eb;
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
 /* Input styles for light mode */
 .light input,
 .light select,
 .light textarea {
-  background-color: #f9fafb !important;
-  border-color: #e5e7eb !important;
-  color: #18181b !important;
+  background-color: #F7F5FF !important;
+  border-color: rgba(99, 102, 241, 0.25) !important;
+  color: #16133A !important;
 }
 
 .light input::placeholder,
 .light textarea::placeholder {
-  color: #9ca3af !important;
+  color: #6B6888 !important;
 }
 
 /* Responsive Typography */
@@ -225,6 +233,11 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px 200px;
+}
+
+.light .noise-overlay::before {
+  opacity: 0.04;
+  mix-blend-mode: multiply;
 }
 
 /* ─── Marquee animation ─── */
@@ -336,4 +349,12 @@ body {
   );
   pointer-events: none;
   transition: background 0.1s ease;
+}
+
+.light .hero-spotlight {
+  background: radial-gradient(
+    700px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(99, 102, 241, 0.07),
+    transparent 40%
+  );
 }
