@@ -12,6 +12,21 @@ export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const terminalRef = useRef<HTMLDivElement>(null)
+  const [spotlightPos, setSpotlightPos] = useState({ x: 50, y: 50 })
+
+  // Mouse spotlight tracking
+  useEffect(() => {
+    const hero = heroRef.current
+    if (!hero) return
+    const onMouseMove = (e: MouseEvent) => {
+      const rect = hero.getBoundingClientRect()
+      const x = ((e.clientX - rect.left) / rect.width) * 100
+      const y = ((e.clientY - rect.top) / rect.height) * 100
+      setSpotlightPos({ x, y })
+    }
+    hero.addEventListener('mousemove', onMouseMove)
+    return () => hero.removeEventListener('mousemove', onMouseMove)
+  }, [])
 
   const codeLines = [
     { text: 'const webSensei = {', delay: 0 },
@@ -117,6 +132,14 @@ export function HeroSection() {
 
   return (
     <section ref={heroRef} id="home" className="relative min-h-screen flex items-center justify-center px-4 pt-16 overflow-hidden">
+      {/* Mouse spotlight */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0 transition-all duration-150"
+        style={{
+          background: `radial-gradient(700px circle at ${spotlightPos.x}% ${spotlightPos.y}%, rgba(99,102,241,0.07), transparent 50%)`,
+        }}
+      />
+
       {/* Background glow effects */}
       <div className="hero-glow absolute top-1/4 left-1/4 w-96 h-96 bg-ninja-purple/20 rounded-full blur-3xl pointer-events-none" />
       <div className="hero-glow absolute bottom-1/4 right-1/4 w-96 h-96 bg-ninja-cyan/20 rounded-full blur-3xl pointer-events-none" style={{ animationDelay: '1s' }} />
@@ -154,7 +177,7 @@ export function HeroSection() {
               ref={titleRef}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight overflow-hidden"
             >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-ninja-cyan to-ninja-purple inline-flex flex-wrap">
+              <span className="text-shimmer inline-flex flex-wrap">
                 {splitText(t.brandName)}
               </span>
             </h1>

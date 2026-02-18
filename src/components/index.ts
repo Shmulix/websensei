@@ -1,6 +1,8 @@
 export { Navigation } from './Navigation'
 export { ParticleBackground } from './ParticleBackground'
 export { KanjiBackground } from './KanjiBackground'
+export { CustomCursor } from './CustomCursor'
+export { TechMarquee } from './TechMarquee'
 export { HeroSection } from './HeroSection'
 export { AboutSection } from './AboutSection'
 export { SkillsSection } from './SkillsSection'

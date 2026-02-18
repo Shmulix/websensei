@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import '../globals.css'
 import { Navigation } from '@/components/Navigation'
 import { ParticleBackground } from '@/components/ParticleBackground'
+import { CustomCursor } from '@/components/CustomCursor'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { GSAPProvider } from '@/components/GSAPProvider'
 import { DictionaryProvider } from '@/i18n/DictionaryProvider'
@@ -66,10 +67,11 @@ export default async function LocaleLayout({
           />
         )}
       </head>
-      <body className={`min-h-screen antialiased ${rtl ? 'font-heebo' : ''}`}>
+      <body className={`min-h-screen antialiased noise-overlay ${rtl ? 'font-heebo' : ''}`}>
         <ThemeProvider>
           <DictionaryProvider dictionary={dictionary} locale={locale}>
             <GSAPProvider>
+              <CustomCursor />
               <ParticleBackground />
               <Navigation />
               <main className="relative z-10">
